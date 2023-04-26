@@ -32,14 +32,14 @@ namespace WindowsFormsApp1
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.CoordinatesTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PeriodicityTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.AmplitudeTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.AddObjectBtn = new System.Windows.Forms.Button();
+            this.CancelBtn = new System.Windows.Forms.Button();
+            this.SaveSourceBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -68,11 +68,11 @@ namespace WindowsFormsApp1
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.CoordinatesTextBox);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.PeriodicityTextBox);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.AmplitudeTextBox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -83,12 +83,12 @@ namespace WindowsFormsApp1
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Характеристики";
             // 
-            // textBox2
+            // CoordinatesTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(327, 180);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(184, 34);
-            this.textBox2.TabIndex = 25;
+            this.CoordinatesTextBox.Location = new System.Drawing.Point(327, 180);
+            this.CoordinatesTextBox.Name = "CoordinatesTextBox";
+            this.CoordinatesTextBox.Size = new System.Drawing.Size(184, 34);
+            this.CoordinatesTextBox.TabIndex = 25;
             // 
             // label4
             // 
@@ -99,12 +99,12 @@ namespace WindowsFormsApp1
             this.label4.TabIndex = 26;
             this.label4.Text = "Координаты:";
             // 
-            // textBox1
+            // PeriodicityTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(327, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 34);
-            this.textBox1.TabIndex = 23;
+            this.PeriodicityTextBox.Location = new System.Drawing.Point(327, 127);
+            this.PeriodicityTextBox.Name = "PeriodicityTextBox";
+            this.PeriodicityTextBox.Size = new System.Drawing.Size(184, 34);
+            this.PeriodicityTextBox.TabIndex = 23;
             // 
             // label3
             // 
@@ -115,12 +115,12 @@ namespace WindowsFormsApp1
             this.label3.TabIndex = 24;
             this.label3.Text = "Частота:";
             // 
-            // textBox5
+            // AmplitudeTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(327, 74);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(184, 34);
-            this.textBox5.TabIndex = 21;
+            this.AmplitudeTextBox.Location = new System.Drawing.Point(327, 74);
+            this.AmplitudeTextBox.Name = "AmplitudeTextBox";
+            this.AmplitudeTextBox.Size = new System.Drawing.Size(184, 34);
+            this.AmplitudeTextBox.TabIndex = 21;
             // 
             // label2
             // 
@@ -131,35 +131,35 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 22;
             this.label2.Text = "Амплитуда:";
             // 
-            // button1
+            // CancelBtn
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(453, 436);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 53);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Отмена";
-            this.button1.UseVisualStyleBackColor = false;
+            this.CancelBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CancelBtn.BackColor = System.Drawing.Color.Red;
+            this.CancelBtn.FlatAppearance.BorderSize = 0;
+            this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CancelBtn.ForeColor = System.Drawing.Color.Black;
+            this.CancelBtn.Location = new System.Drawing.Point(453, 436);
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(175, 53);
+            this.CancelBtn.TabIndex = 37;
+            this.CancelBtn.Text = "Отмена";
+            this.CancelBtn.UseVisualStyleBackColor = false;
             // 
-            // AddObjectBtn
+            // SaveSourceBtn
             // 
-            this.AddObjectBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddObjectBtn.BackColor = System.Drawing.Color.Lime;
-            this.AddObjectBtn.FlatAppearance.BorderSize = 0;
-            this.AddObjectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddObjectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddObjectBtn.ForeColor = System.Drawing.Color.Black;
-            this.AddObjectBtn.Location = new System.Drawing.Point(272, 436);
-            this.AddObjectBtn.Name = "AddObjectBtn";
-            this.AddObjectBtn.Size = new System.Drawing.Size(175, 53);
-            this.AddObjectBtn.TabIndex = 36;
-            this.AddObjectBtn.Text = "Сохранить";
-            this.AddObjectBtn.UseVisualStyleBackColor = false;
+            this.SaveSourceBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SaveSourceBtn.BackColor = System.Drawing.Color.Lime;
+            this.SaveSourceBtn.FlatAppearance.BorderSize = 0;
+            this.SaveSourceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveSourceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SaveSourceBtn.ForeColor = System.Drawing.Color.Black;
+            this.SaveSourceBtn.Location = new System.Drawing.Point(272, 436);
+            this.SaveSourceBtn.Name = "SaveSourceBtn";
+            this.SaveSourceBtn.Size = new System.Drawing.Size(175, 53);
+            this.SaveSourceBtn.TabIndex = 36;
+            this.SaveSourceBtn.Text = "Сохранить";
+            this.SaveSourceBtn.UseVisualStyleBackColor = false;
             // 
             // CharacteristicForSourceForm
             // 
@@ -169,10 +169,11 @@ namespace WindowsFormsApp1
             this.ClientSize = new System.Drawing.Size(919, 507);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.AddObjectBtn);
+            this.Controls.Add(this.CancelBtn);
+            this.Controls.Add(this.SaveSourceBtn);
             this.Name = "CharacteristicForSourceForm";
             this.Text = "Характеристика для источников";
+            this.Load += new System.EventHandler(this.CharacteristicForSourceForm_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -185,13 +186,13 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox PeriodicityTextBox;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox AmplitudeTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button AddObjectBtn;
-        public System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button CancelBtn;
+        private System.Windows.Forms.Button SaveSourceBtn;
+        public System.Windows.Forms.TextBox CoordinatesTextBox;
         private System.Windows.Forms.Label label4;
     }
 }

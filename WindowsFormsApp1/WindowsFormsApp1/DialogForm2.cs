@@ -36,13 +36,15 @@ namespace WindowsFormsApp1
 
         private void AddObjectBtn_Click(object sender, EventArgs e)
         {
-            DialogForm3 dialogForm3 = new DialogForm3();
+            string selectValue = ObjectComboBox.SelectedItem.ToString();
+            DialogForm3 dialogForm3 = new DialogForm3(selectValue);
             dialogForm3.ShowDialog();
         }
 
         private void AddCharacteristicsBtn_Click(object sender, EventArgs e)
         {
-            CharacteristicForSourceForm characteristicForSourceForm = new CharacteristicForSourceForm();
+            string selectValue = SourceComboBox.SelectedItem.ToString();
+            CharacteristicForSourceForm characteristicForSourceForm = new CharacteristicForSourceForm(selectValue);
             characteristicForSourceForm.ShowDialog();
             
         }
