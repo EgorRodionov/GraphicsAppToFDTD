@@ -160,6 +160,7 @@ namespace WindowsFormsApp1
             this.SaveSourceBtn.TabIndex = 36;
             this.SaveSourceBtn.Text = "Сохранить";
             this.SaveSourceBtn.UseVisualStyleBackColor = false;
+            this.SaveSourceBtn.Click += new System.EventHandler(this.SaveSourceBtn_Click);
             // 
             // CharacteristicForSourceForm
             // 

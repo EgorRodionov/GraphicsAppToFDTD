@@ -24,5 +24,13 @@ namespace WindowsFormsApp1
         {
             label1.Text = "Характеристика для " + _selectValue;
         }
+
+        private void SaveSourceBtn_Click(object sender, EventArgs e)
+        {
+            DialogForm2 dialogForm2 = this.Owner as DialogForm2;
+            if (dialogForm2 != null)
+                dialogForm2.BoxForSourceListBox.Items.Add(_selectValue);
+            this.Hide();
+        }
     }
 }

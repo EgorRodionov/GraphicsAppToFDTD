@@ -38,6 +38,7 @@ namespace WindowsFormsApp1
         {
             string selectValue = ObjectComboBox.SelectedItem.ToString();
             DialogForm3 dialogForm3 = new DialogForm3(selectValue);
+            dialogForm3.Owner = this;
             dialogForm3.ShowDialog();
         }
 
@@ -45,8 +46,21 @@ namespace WindowsFormsApp1
         {
             string selectValue = SourceComboBox.SelectedItem.ToString();
             CharacteristicForSourceForm characteristicForSourceForm = new CharacteristicForSourceForm(selectValue);
+            characteristicForSourceForm.Owner = this;
             characteristicForSourceForm.ShowDialog();
             
+        }
+
+        private void ClearObjectBtn_Click(object sender, EventArgs e)
+        {
+            if (BoxForObjectListBox.SelectedIndex != -1)
+                BoxForObjectListBox.Items.RemoveAt(BoxForObjectListBox.SelectedIndex);
+        }
+
+        private void ClearSourceBtn_Click(object sender, EventArgs e)
+        {
+            if (BoxForSourceListBox.SelectedIndex != -1)
+                BoxForSourceListBox.Items.RemoveAt(BoxForSourceListBox.SelectedIndex);
         }
     }
 }

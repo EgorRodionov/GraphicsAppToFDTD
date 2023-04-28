@@ -30,35 +30,37 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BoxForSourceListBox = new System.Windows.Forms.ListBox();
+            this.ClearSourceBtn = new System.Windows.Forms.Button();
             this.AddCharacteristicsBtn = new System.Windows.Forms.Button();
             this.SourceComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ClearObjectBtn = new System.Windows.Forms.Button();
             this.ObjectComboBox = new System.Windows.Forms.ComboBox();
             this.AddObjectBtn = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.BoxForObjectListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.StartExperimentBtn = new System.Windows.Forms.Button();
             this.BackBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox3.Controls.Add(this.listBox2);
-            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.BoxForSourceListBox);
+            this.groupBox3.Controls.Add(this.ClearSourceBtn);
             this.groupBox3.Controls.Add(this.AddCharacteristicsBtn);
             this.groupBox3.Controls.Add(this.SourceComboBox);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.ClearObjectBtn);
             this.groupBox3.Controls.Add(this.ObjectComboBox);
             this.groupBox3.Controls.Add(this.AddObjectBtn);
-            this.groupBox3.Controls.Add(this.listBox1);
+            this.groupBox3.Controls.Add(this.BoxForObjectListBox);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.textBox1);
@@ -71,30 +73,31 @@ namespace WindowsFormsApp1
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Параметры";
             // 
-            // listBox2
+            // BoxForSourceListBox
             // 
-            this.listBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 29;
-            this.listBox2.Location = new System.Drawing.Point(949, 290);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(316, 91);
-            this.listBox2.TabIndex = 38;
+            this.BoxForSourceListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BoxForSourceListBox.FormattingEnabled = true;
+            this.BoxForSourceListBox.ItemHeight = 29;
+            this.BoxForSourceListBox.Location = new System.Drawing.Point(949, 290);
+            this.BoxForSourceListBox.Name = "BoxForSourceListBox";
+            this.BoxForSourceListBox.Size = new System.Drawing.Size(316, 91);
+            this.BoxForSourceListBox.TabIndex = 38;
             // 
-            // button3
+            // ClearSourceBtn
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.Color.Gray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(867, 344);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(51, 37);
-            this.button3.TabIndex = 37;
-            this.button3.Text = "<";
-            this.button3.UseVisualStyleBackColor = false;
+            this.ClearSourceBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ClearSourceBtn.BackColor = System.Drawing.Color.Gray;
+            this.ClearSourceBtn.FlatAppearance.BorderSize = 0;
+            this.ClearSourceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearSourceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClearSourceBtn.ForeColor = System.Drawing.Color.Black;
+            this.ClearSourceBtn.Location = new System.Drawing.Point(867, 344);
+            this.ClearSourceBtn.Name = "ClearSourceBtn";
+            this.ClearSourceBtn.Size = new System.Drawing.Size(51, 37);
+            this.ClearSourceBtn.TabIndex = 37;
+            this.ClearSourceBtn.Text = "<";
+            this.ClearSourceBtn.UseVisualStyleBackColor = false;
+            this.ClearSourceBtn.Click += new System.EventHandler(this.ClearSourceBtn_Click);
             // 
             // AddCharacteristicsBtn
             // 
@@ -148,6 +151,7 @@ namespace WindowsFormsApp1
             this.ClearObjectBtn.TabIndex = 33;
             this.ClearObjectBtn.Text = "<";
             this.ClearObjectBtn.UseVisualStyleBackColor = false;
+            this.ClearObjectBtn.Click += new System.EventHandler(this.ClearObjectBtn_Click);
             // 
             // ObjectComboBox
             // 
@@ -178,15 +182,15 @@ namespace WindowsFormsApp1
             this.AddObjectBtn.UseVisualStyleBackColor = false;
             this.AddObjectBtn.Click += new System.EventHandler(this.AddObjectBtn_Click);
             // 
-            // listBox1
+            // BoxForObjectListBox
             // 
-            this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 29;
-            this.listBox1.Location = new System.Drawing.Point(949, 190);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(316, 91);
-            this.listBox1.TabIndex = 16;
+            this.BoxForObjectListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BoxForObjectListBox.FormattingEnabled = true;
+            this.BoxForObjectListBox.ItemHeight = 29;
+            this.BoxForObjectListBox.Location = new System.Drawing.Point(949, 190);
+            this.BoxForObjectListBox.Name = "BoxForObjectListBox";
+            this.BoxForObjectListBox.Size = new System.Drawing.Size(316, 91);
+            this.BoxForObjectListBox.TabIndex = 16;
             // 
             // label1
             // 
@@ -240,6 +244,16 @@ namespace WindowsFormsApp1
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(944, 158);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(276, 29);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Добавленные объекты";
+            // 
             // DialogForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -265,15 +279,16 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button StartExperimentBtn;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button AddObjectBtn;
         private System.Windows.Forms.ComboBox ObjectComboBox;
         private System.Windows.Forms.Button ClearObjectBtn;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button ClearSourceBtn;
         private System.Windows.Forms.Button AddCharacteristicsBtn;
         private System.Windows.Forms.ComboBox SourceComboBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BackBtn;
+        public System.Windows.Forms.ListBox BoxForObjectListBox;
+        public System.Windows.Forms.ListBox BoxForSourceListBox;
+        private System.Windows.Forms.Label label2;
     }
 }
