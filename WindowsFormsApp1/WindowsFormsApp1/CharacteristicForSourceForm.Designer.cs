@@ -32,7 +32,10 @@ namespace WindowsFormsApp1
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CoordinatesTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.CoordinateYtextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.CoordinateXtextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.PeriodicityTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,7 +71,10 @@ namespace WindowsFormsApp1
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.CoordinatesTextBox);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.CoordinateYtextBox);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.CoordinateXtextBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.PeriodicityTextBox);
             this.groupBox1.Controls.Add(this.label3);
@@ -83,12 +89,37 @@ namespace WindowsFormsApp1
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Характеристики";
             // 
-            // CoordinatesTextBox
+            // label6
             // 
-            this.CoordinatesTextBox.Location = new System.Drawing.Point(327, 180);
-            this.CoordinatesTextBox.Name = "CoordinatesTextBox";
-            this.CoordinatesTextBox.Size = new System.Drawing.Size(184, 34);
-            this.CoordinatesTextBox.TabIndex = 25;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(403, 183);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 29);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Y";
+            // 
+            // CoordinateYtextBox
+            // 
+            this.CoordinateYtextBox.Location = new System.Drawing.Point(439, 180);
+            this.CoordinateYtextBox.Name = "CoordinateYtextBox";
+            this.CoordinateYtextBox.Size = new System.Drawing.Size(64, 34);
+            this.CoordinateYtextBox.TabIndex = 28;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(291, 183);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 29);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "X";
+            // 
+            // CoordinateXtextBox
+            // 
+            this.CoordinateXtextBox.Location = new System.Drawing.Point(327, 180);
+            this.CoordinateXtextBox.Name = "CoordinateXtextBox";
+            this.CoordinateXtextBox.Size = new System.Drawing.Size(64, 34);
+            this.CoordinateXtextBox.TabIndex = 25;
             // 
             // label4
             // 
@@ -101,9 +132,9 @@ namespace WindowsFormsApp1
             // 
             // PeriodicityTextBox
             // 
-            this.PeriodicityTextBox.Location = new System.Drawing.Point(327, 127);
+            this.PeriodicityTextBox.Location = new System.Drawing.Point(296, 127);
             this.PeriodicityTextBox.Name = "PeriodicityTextBox";
-            this.PeriodicityTextBox.Size = new System.Drawing.Size(184, 34);
+            this.PeriodicityTextBox.Size = new System.Drawing.Size(215, 34);
             this.PeriodicityTextBox.TabIndex = 23;
             // 
             // label3
@@ -117,9 +148,9 @@ namespace WindowsFormsApp1
             // 
             // AmplitudeTextBox
             // 
-            this.AmplitudeTextBox.Location = new System.Drawing.Point(327, 74);
+            this.AmplitudeTextBox.Location = new System.Drawing.Point(296, 74);
             this.AmplitudeTextBox.Name = "AmplitudeTextBox";
-            this.AmplitudeTextBox.Size = new System.Drawing.Size(184, 34);
+            this.AmplitudeTextBox.Size = new System.Drawing.Size(215, 34);
             this.AmplitudeTextBox.TabIndex = 21;
             // 
             // label2
@@ -173,7 +204,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.SaveSourceBtn);
             this.Name = "CharacteristicForSourceForm";
-            this.Text = "Характеристика для источников";
+            this.Text = "Характеристика для источника";
             this.Load += new System.EventHandler(this.CharacteristicForSourceForm_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -193,7 +224,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button CancelBtn;
         private System.Windows.Forms.Button SaveSourceBtn;
-        public System.Windows.Forms.TextBox CoordinatesTextBox;
+        public System.Windows.Forms.TextBox CoordinateXtextBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox CoordinateYtextBox;
     }
 }

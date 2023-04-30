@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacteristicForEllipsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CharacteristicForEllipsForm.Designer.cs">
+      <DependentUpon>CharacteristicForEllipsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,6 +90,9 @@
     <Compile Include="CharacteristicForSourceForm.Designer.cs">
       <DependentUpon>CharacteristicForSourceForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CharacteristicForEllipsForm.resx">
+      <DependentUpon>CharacteristicForEllipsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DialogForm1.resx">
       <DependentUpon>DialogForm1.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class DialogForm3 : Form
+    public partial class CharacteristicForEllipsForm : Form
     {
         private string _selectValue;
-        public DialogForm3(string selectValue)
+        public CharacteristicForEllipsForm(string selectValue)
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen;
             _selectValue = selectValue;
         }
 

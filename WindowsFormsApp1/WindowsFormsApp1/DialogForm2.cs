@@ -36,19 +36,38 @@ namespace WindowsFormsApp1
 
         private void AddObjectBtn_Click(object sender, EventArgs e)
         {
-            string selectValue = ObjectComboBox.SelectedItem.ToString();
-            DialogForm3 dialogForm3 = new DialogForm3(selectValue);
-            dialogForm3.Owner = this;
-            dialogForm3.ShowDialog();
+            if (ObjectComboBox.SelectedItem.ToString() == "Прямоугольник")
+            {
+                string selectValue = ObjectComboBox.SelectedItem.ToString();
+                DialogForm3 dialogForm3 = new DialogForm3(selectValue);
+                dialogForm3.Owner = this;
+                dialogForm3.ShowDialog();
+            }
+            else
+            {
+                string selectValue = ObjectComboBox.SelectedItem.ToString();
+                CharacteristicForEllipsForm characteristicForEllipsForm = new CharacteristicForEllipsForm(selectValue);
+                characteristicForEllipsForm.Owner = this;
+                characteristicForEllipsForm.ShowDialog();
+            }
         }
 
         private void AddCharacteristicsBtn_Click(object sender, EventArgs e)
         {
-            string selectValue = SourceComboBox.SelectedItem.ToString();
-            CharacteristicForSourceForm characteristicForSourceForm = new CharacteristicForSourceForm(selectValue);
-            characteristicForSourceForm.Owner = this;
-            characteristicForSourceForm.ShowDialog();
-            
+            if (SourceComboBox.SelectedItem.ToString() == "Точечные")
+            {
+                string selectValue = SourceComboBox.SelectedItem.ToString();
+                CharacteristicForSourceForm characteristicForSourceForm = new CharacteristicForSourceForm(selectValue);
+                characteristicForSourceForm.Owner = this;
+                characteristicForSourceForm.ShowDialog();
+            }
+            else
+            {
+                string selectValue = SourceComboBox.SelectedItem.ToString();
+                CharacteristicForSourceForm characteristicForSourceForm2 = new CharacteristicForSourceForm(selectValue);
+                characteristicForSourceForm2.Owner = this;
+                characteristicForSourceForm2.ShowDialog();
+            }
         }
 
         private void ClearObjectBtn_Click(object sender, EventArgs e)
