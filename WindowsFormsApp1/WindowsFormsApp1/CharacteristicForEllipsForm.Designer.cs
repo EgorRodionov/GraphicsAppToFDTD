@@ -32,16 +32,19 @@ namespace WindowsFormsApp1
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.AnchorPointTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SizeObjectTextBox = new System.Windows.Forms.TextBox();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.SaveObjectBtn = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.CoordinateYtextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.CoordinateXtextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -70,12 +73,15 @@ namespace WindowsFormsApp1
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.CoordinateYtextBox);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.CoordinateXtextBox);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.AnchorPointTextBox);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.SizeObjectTextBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -87,12 +93,46 @@ namespace WindowsFormsApp1
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Характеристики";
             // 
-            // AnchorPointTextBox
+            // label5
             // 
-            this.AnchorPointTextBox.Location = new System.Drawing.Point(340, 208);
-            this.AnchorPointTextBox.Name = "AnchorPointTextBox";
-            this.AnchorPointTextBox.Size = new System.Drawing.Size(109, 34);
-            this.AnchorPointTextBox.TabIndex = 23;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(44, 157);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(290, 29);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Фокальное расстояние:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(354, 154);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(109, 34);
+            this.textBox2.TabIndex = 28;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(44, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(194, 29);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Малая полуось:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(354, 99);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(109, 34);
+            this.textBox1.TabIndex = 26;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(44, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(223, 29);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Большая полуось:";
             // 
             // label3
             // 
@@ -105,7 +145,7 @@ namespace WindowsFormsApp1
             // 
             // SizeObjectTextBox
             // 
-            this.SizeObjectTextBox.Location = new System.Drawing.Point(340, 45);
+            this.SizeObjectTextBox.Location = new System.Drawing.Point(354, 45);
             this.SizeObjectTextBox.Name = "SizeObjectTextBox";
             this.SizeObjectTextBox.Size = new System.Drawing.Size(109, 34);
             this.SizeObjectTextBox.TabIndex = 21;
@@ -141,46 +181,37 @@ namespace WindowsFormsApp1
             this.SaveObjectBtn.UseVisualStyleBackColor = false;
             this.SaveObjectBtn.Click += new System.EventHandler(this.SaveObjectBtn_Click);
             // 
-            // label4
+            // label6
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(223, 29);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Большая полуось:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(431, 211);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 29);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Y";
             // 
-            // label2
+            // CoordinateYtextBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 29);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Малая полуось:";
+            this.CoordinateYtextBox.Location = new System.Drawing.Point(467, 208);
+            this.CoordinateYtextBox.Name = "CoordinateYtextBox";
+            this.CoordinateYtextBox.Size = new System.Drawing.Size(64, 34);
+            this.CoordinateYtextBox.TabIndex = 32;
             // 
-            // textBox1
+            // label7
             // 
-            this.textBox1.Location = new System.Drawing.Point(340, 99);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(109, 34);
-            this.textBox1.TabIndex = 26;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(319, 211);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(30, 29);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "X";
             // 
-            // label5
+            // CoordinateXtextBox
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 157);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(290, 29);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Фокальное расстояние:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(340, 154);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(109, 34);
-            this.textBox2.TabIndex = 28;
+            this.CoordinateXtextBox.Location = new System.Drawing.Point(355, 208);
+            this.CoordinateXtextBox.Name = "CoordinateXtextBox";
+            this.CoordinateXtextBox.Size = new System.Drawing.Size(64, 34);
+            this.CoordinateXtextBox.TabIndex = 30;
             // 
             // CharacteristicForEllipsForm
             // 
@@ -206,7 +237,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.TextBox AnchorPointTextBox;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox SizeObjectTextBox;
         private System.Windows.Forms.Button CancelBtn;
@@ -216,5 +246,9 @@ namespace WindowsFormsApp1
         public System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox CoordinateYtextBox;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox CoordinateXtextBox;
     }
 }

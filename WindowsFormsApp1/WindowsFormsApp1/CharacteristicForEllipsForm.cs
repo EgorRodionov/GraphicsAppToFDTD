@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         public CharacteristicForEllipsForm(string selectValue)
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             _selectValue = selectValue;
         }
 
