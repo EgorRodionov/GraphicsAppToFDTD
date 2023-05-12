@@ -76,6 +76,8 @@
     <Compile Include="DialogForm3.Designer.cs">
       <DependentUpon>DialogForm3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ellipse.cs" />
+    <Compile Include="Figure.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +92,7 @@
     <Compile Include="CharacteristicForSourceForm.Designer.cs">
       <DependentUpon>CharacteristicForSourceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rectangle.cs" />
     <EmbeddedResource Include="CharacteristicForEllipsForm.resx">
       <DependentUpon>CharacteristicForEllipsForm.cs</DependentUpon>
     </EmbeddedResource>
