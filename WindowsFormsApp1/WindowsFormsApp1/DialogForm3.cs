@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
                     dialogForm2.Figures.Add(figure);
                 }
 
-                ShowShapesOnChart(Figures, rectanglee);
+                //ShowShapesOnChart(Figures, rectanglee);
             }
             this.Hide();
         }

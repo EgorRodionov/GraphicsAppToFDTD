@@ -32,19 +32,19 @@ namespace WindowsFormsApp1
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.SizeObjectTextBox = new System.Windows.Forms.TextBox();
-            this.CancelBtn = new System.Windows.Forms.Button();
-            this.SaveObjectBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.CoordinateYtextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.CoordinateXtextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.FocalDistanceTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.r2TextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.r1TextBox = new System.Windows.Forms.TextBox();
+            this.CancelBtn = new System.Windows.Forms.Button();
+            this.SaveObjectBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -78,12 +78,12 @@ namespace WindowsFormsApp1
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.CoordinateXtextBox);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.FocalDistanceTextBox);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.r2TextBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.SizeObjectTextBox);
+            this.groupBox1.Controls.Add(this.r1TextBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(165, 149);
@@ -92,94 +92,6 @@ namespace WindowsFormsApp1
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Характеристики";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 157);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(290, 29);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Фокальное расстояние:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(354, 154);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(109, 34);
-            this.textBox2.TabIndex = 28;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 29);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Малая полуось:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(354, 99);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(109, 34);
-            this.textBox1.TabIndex = 26;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(223, 29);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Большая полуось:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 211);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 29);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Точка привязки:";
-            // 
-            // SizeObjectTextBox
-            // 
-            this.SizeObjectTextBox.Location = new System.Drawing.Point(354, 45);
-            this.SizeObjectTextBox.Name = "SizeObjectTextBox";
-            this.SizeObjectTextBox.Size = new System.Drawing.Size(109, 34);
-            this.SizeObjectTextBox.TabIndex = 21;
-            // 
-            // CancelBtn
-            // 
-            this.CancelBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CancelBtn.BackColor = System.Drawing.Color.Red;
-            this.CancelBtn.FlatAppearance.BorderSize = 0;
-            this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CancelBtn.ForeColor = System.Drawing.Color.Black;
-            this.CancelBtn.Location = new System.Drawing.Point(453, 436);
-            this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(175, 53);
-            this.CancelBtn.TabIndex = 37;
-            this.CancelBtn.Text = "Отмена";
-            this.CancelBtn.UseVisualStyleBackColor = false;
-            // 
-            // SaveObjectBtn
-            // 
-            this.SaveObjectBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SaveObjectBtn.BackColor = System.Drawing.Color.Lime;
-            this.SaveObjectBtn.FlatAppearance.BorderSize = 0;
-            this.SaveObjectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveObjectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveObjectBtn.ForeColor = System.Drawing.Color.Black;
-            this.SaveObjectBtn.Location = new System.Drawing.Point(272, 436);
-            this.SaveObjectBtn.Name = "SaveObjectBtn";
-            this.SaveObjectBtn.Size = new System.Drawing.Size(175, 53);
-            this.SaveObjectBtn.TabIndex = 36;
-            this.SaveObjectBtn.Text = "Сохранить";
-            this.SaveObjectBtn.UseVisualStyleBackColor = false;
-            this.SaveObjectBtn.Click += new System.EventHandler(this.SaveObjectBtn_Click);
             // 
             // label6
             // 
@@ -213,6 +125,94 @@ namespace WindowsFormsApp1
             this.CoordinateXtextBox.Size = new System.Drawing.Size(64, 34);
             this.CoordinateXtextBox.TabIndex = 30;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(44, 157);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(290, 29);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Фокальное расстояние:";
+            // 
+            // FocalDistanceTextBox
+            // 
+            this.FocalDistanceTextBox.Location = new System.Drawing.Point(354, 154);
+            this.FocalDistanceTextBox.Name = "FocalDistanceTextBox";
+            this.FocalDistanceTextBox.Size = new System.Drawing.Size(109, 34);
+            this.FocalDistanceTextBox.TabIndex = 28;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(44, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(194, 29);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Малая полуось:";
+            // 
+            // r2TextBox
+            // 
+            this.r2TextBox.Location = new System.Drawing.Point(354, 99);
+            this.r2TextBox.Name = "r2TextBox";
+            this.r2TextBox.Size = new System.Drawing.Size(109, 34);
+            this.r2TextBox.TabIndex = 26;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(44, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(223, 29);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Большая полуось:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(44, 211);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(205, 29);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Точка привязки:";
+            // 
+            // r1TextBox
+            // 
+            this.r1TextBox.Location = new System.Drawing.Point(354, 45);
+            this.r1TextBox.Name = "r1TextBox";
+            this.r1TextBox.Size = new System.Drawing.Size(109, 34);
+            this.r1TextBox.TabIndex = 21;
+            // 
+            // CancelBtn
+            // 
+            this.CancelBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CancelBtn.BackColor = System.Drawing.Color.Red;
+            this.CancelBtn.FlatAppearance.BorderSize = 0;
+            this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CancelBtn.ForeColor = System.Drawing.Color.Black;
+            this.CancelBtn.Location = new System.Drawing.Point(453, 436);
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(175, 53);
+            this.CancelBtn.TabIndex = 37;
+            this.CancelBtn.Text = "Отмена";
+            this.CancelBtn.UseVisualStyleBackColor = false;
+            // 
+            // SaveObjectBtn
+            // 
+            this.SaveObjectBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SaveObjectBtn.BackColor = System.Drawing.Color.Lime;
+            this.SaveObjectBtn.FlatAppearance.BorderSize = 0;
+            this.SaveObjectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveObjectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SaveObjectBtn.ForeColor = System.Drawing.Color.Black;
+            this.SaveObjectBtn.Location = new System.Drawing.Point(272, 436);
+            this.SaveObjectBtn.Name = "SaveObjectBtn";
+            this.SaveObjectBtn.Size = new System.Drawing.Size(175, 53);
+            this.SaveObjectBtn.TabIndex = 36;
+            this.SaveObjectBtn.Text = "Сохранить";
+            this.SaveObjectBtn.UseVisualStyleBackColor = false;
+            this.SaveObjectBtn.Click += new System.EventHandler(this.SaveObjectBtn_Click);
+            // 
             // CharacteristicForEllipsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -238,14 +238,14 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox SizeObjectTextBox;
+        public System.Windows.Forms.TextBox r1TextBox;
         private System.Windows.Forms.Button CancelBtn;
         private System.Windows.Forms.Button SaveObjectBtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox FocalDistanceTextBox;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox r2TextBox;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox CoordinateYtextBox;
         private System.Windows.Forms.Label label7;

@@ -21,6 +21,9 @@ namespace WindowsFormsApp1
             this.BackColor = ColorTranslator.FromHtml("#1A2D37");
         }
 
+        //Публичное свойство для доступа к List
+        public List<Figure> Figures { get; } = new List<Figure>();
+
         private void OpenForm3Btn_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
@@ -83,9 +86,6 @@ namespace WindowsFormsApp1
                 BoxForSourceListBox.Items.RemoveAt(BoxForSourceListBox.SelectedIndex);
         }
 
-        //Публичное свойство для доступа к List
-        public List<Figure> Figures { get; } = new List<Figure>();
-
         private void BtnUp_Click(object sender, EventArgs e)
         {
             DialogForm3 dialogForm3 = this.Owner as DialogForm3;
@@ -122,6 +122,31 @@ namespace WindowsFormsApp1
                 BoxForObjectListBox.Items.Insert(selectedIndex + 1, selectedText);
                 BoxForObjectListBox.SelectedIndex = selectedIndex + 1;
             }
+        }
+
+        private void ShowFigureBtn_Click(object sender, EventArgs e)
+        {
+            if (BoxForObjectListBox.Items.Count != 0)
+            {
+                foreach (Figure figure in Figures)
+                {
+                    Series series = new Series();
+                    series.ChartType = SeriesChartType.Point;
+                    series.MarkerSize = (int)Math.Max(figure.x, figure.y); // задаем размер символа
+
+                    if (figure is WindowsFormsApp1.Rectanglee rectangle) //проверка типа каждого элемента списка 
+                        series.MarkerStyle = MarkerStyle.Square;
+                    else
+                        series.MarkerStyle = MarkerStyle.Circle;
+
+                    // Добавляем точку на элемент Chart
+                    series.Points.AddXY(figure.x, figure.y);
+                    // Добавляем серию на элемент Chart
+                    chart1.Series.Add(series);
+                }
+            }
+            else
+                MessageBox.Show("Нужно добавить объекты!");
         }
     }
 }

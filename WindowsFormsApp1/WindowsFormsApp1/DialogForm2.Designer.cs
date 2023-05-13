@@ -29,10 +29,12 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BtnDown = new System.Windows.Forms.Button();
+            this.BtnUp = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,8 +54,7 @@ namespace WindowsFormsApp1
             this.StartExperimentBtn = new System.Windows.Forms.Button();
             this.BackBtn = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.BtnUp = new System.Windows.Forms.Button();
-            this.BtnDown = new System.Windows.Forms.Button();
+            this.ShowFigureBtn = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
@@ -87,6 +88,38 @@ namespace WindowsFormsApp1
             this.groupBox3.TabIndex = 29;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Параметры";
+            // 
+            // BtnDown
+            // 
+            this.BtnDown.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnDown.BackColor = System.Drawing.Color.Lime;
+            this.BtnDown.FlatAppearance.BorderSize = 0;
+            this.BtnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnDown.ForeColor = System.Drawing.Color.Black;
+            this.BtnDown.Location = new System.Drawing.Point(1324, 186);
+            this.BtnDown.Name = "BtnDown";
+            this.BtnDown.Size = new System.Drawing.Size(51, 36);
+            this.BtnDown.TabIndex = 44;
+            this.BtnDown.Text = "↓";
+            this.BtnDown.UseVisualStyleBackColor = false;
+            this.BtnDown.Click += new System.EventHandler(this.BtnDown_Click);
+            // 
+            // BtnUp
+            // 
+            this.BtnUp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnUp.BackColor = System.Drawing.Color.Lime;
+            this.BtnUp.FlatAppearance.BorderSize = 0;
+            this.BtnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnUp.ForeColor = System.Drawing.Color.Black;
+            this.BtnUp.Location = new System.Drawing.Point(1324, 143);
+            this.BtnUp.Name = "BtnUp";
+            this.BtnUp.Size = new System.Drawing.Size(51, 37);
+            this.BtnUp.TabIndex = 43;
+            this.BtnUp.Text = "↑";
+            this.BtnUp.UseVisualStyleBackColor = false;
+            this.BtnUp.Click += new System.EventHandler(this.BtnUp_Click);
             // 
             // label5
             // 
@@ -279,7 +312,7 @@ namespace WindowsFormsApp1
             // 
             this.StartExperimentBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.StartExperimentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.StartExperimentBtn.Location = new System.Drawing.Point(589, 445);
+            this.StartExperimentBtn.Location = new System.Drawing.Point(740, 445);
             this.StartExperimentBtn.Name = "StartExperimentBtn";
             this.StartExperimentBtn.Size = new System.Drawing.Size(407, 50);
             this.StartExperimentBtn.TabIndex = 30;
@@ -291,7 +324,7 @@ namespace WindowsFormsApp1
             // 
             this.BackBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BackBtn.Location = new System.Drawing.Point(1002, 445);
+            this.BackBtn.Location = new System.Drawing.Point(1153, 445);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(200, 50);
             this.BackBtn.TabIndex = 31;
@@ -302,51 +335,31 @@ namespace WindowsFormsApp1
             // chart1
             // 
             this.chart1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(228, 522);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(1287, 473);
             this.chart1.TabIndex = 34;
             this.chart1.Text = "chart1";
             // 
-            // BtnUp
+            // ShowFigureBtn
             // 
-            this.BtnUp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnUp.BackColor = System.Drawing.Color.Lime;
-            this.BtnUp.FlatAppearance.BorderSize = 0;
-            this.BtnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnUp.ForeColor = System.Drawing.Color.Black;
-            this.BtnUp.Location = new System.Drawing.Point(1324, 143);
-            this.BtnUp.Name = "BtnUp";
-            this.BtnUp.Size = new System.Drawing.Size(51, 37);
-            this.BtnUp.TabIndex = 43;
-            this.BtnUp.Text = "↑";
-            this.BtnUp.UseVisualStyleBackColor = false;
-            this.BtnUp.Click += new System.EventHandler(this.BtnUp_Click);
-            // 
-            // BtnDown
-            // 
-            this.BtnDown.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnDown.BackColor = System.Drawing.Color.Lime;
-            this.BtnDown.FlatAppearance.BorderSize = 0;
-            this.BtnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnDown.ForeColor = System.Drawing.Color.Black;
-            this.BtnDown.Location = new System.Drawing.Point(1324, 186);
-            this.BtnDown.Name = "BtnDown";
-            this.BtnDown.Size = new System.Drawing.Size(51, 36);
-            this.BtnDown.TabIndex = 44;
-            this.BtnDown.Text = "↓";
-            this.BtnDown.UseVisualStyleBackColor = false;
-            this.BtnDown.Click += new System.EventHandler(this.BtnDown_Click);
+            this.ShowFigureBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ShowFigureBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ShowFigureBtn.Location = new System.Drawing.Point(458, 445);
+            this.ShowFigureBtn.Name = "ShowFigureBtn";
+            this.ShowFigureBtn.Size = new System.Drawing.Size(276, 50);
+            this.ShowFigureBtn.TabIndex = 35;
+            this.ShowFigureBtn.Text = "Отобразить фигуры";
+            this.ShowFigureBtn.UseVisualStyleBackColor = true;
+            this.ShowFigureBtn.Click += new System.EventHandler(this.ShowFigureBtn_Click);
             // 
             // DialogForm2
             // 
@@ -354,6 +367,7 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(1784, 1055);
+            this.Controls.Add(this.ShowFigureBtn);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.StartExperimentBtn);
@@ -392,5 +406,6 @@ namespace WindowsFormsApp1
         public System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button BtnDown;
         private System.Windows.Forms.Button BtnUp;
+        private System.Windows.Forms.Button ShowFigureBtn;
     }
 }
