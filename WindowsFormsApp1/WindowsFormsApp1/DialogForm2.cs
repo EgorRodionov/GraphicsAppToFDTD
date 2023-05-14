@@ -32,9 +32,9 @@ namespace WindowsFormsApp1
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            DialogForm1 dialogForm1 = new DialogForm1();
+            //DialogForm1 dialogForm1 = new DialogForm1();
             this.Hide();
-            dialogForm1.ShowDialog();
+            //dialogForm1.ShowDialog();
             this.Close();
         }
 
@@ -123,11 +123,11 @@ namespace WindowsFormsApp1
                 BoxForObjectListBox.SelectedIndex = selectedIndex + 1;
             }
         }
-
         private void ShowFigureBtn_Click(object sender, EventArgs e)
         {
             if (BoxForObjectListBox.Items.Count != 0)
             {
+                chart1.Series.Clear();
                 foreach (Figure figure in Figures)
                 {
                     Series series = new Series();

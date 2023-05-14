@@ -12,8 +12,10 @@ namespace WindowsFormsApp1
 {
     public partial class DialogForm1 : Form
     {
-        public DialogForm1()
+        private readonly CheckUser _user;
+        public DialogForm1(CheckUser user)
         {
+            _user = user;
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = ColorTranslator.FromHtml("#1A2D37");
@@ -22,9 +24,16 @@ namespace WindowsFormsApp1
         private void StartExperimentBtn_Click(object sender, EventArgs e)
         {
             DialogForm2 dialogForm2 = new DialogForm2();
-            this.Hide();
+            //this.Hide();
             dialogForm2.ShowDialog();
-            this.Close();
+            //this.Close();
+        }
+
+        private void DialogForm1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Authorization authorization = new Authorization();
+            this.Dispose();
+            authorization.ShowDialog();
         }
     }
 }

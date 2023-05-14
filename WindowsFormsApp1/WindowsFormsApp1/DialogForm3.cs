@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
                     dialogForm2.Figures.Add(figure);
                 }
 
-                //ShowShapesOnChart(Figures, rectanglee);
+                ShowShapesOnChart(Figures, rectanglee);
             }
             this.Hide();
         }
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
         private void ShowShapesOnChart(List<Figure> shapes, Rectanglee rectanglee)
         {
             DialogForm2 dialogForm2 = this.Owner as DialogForm2;
-            foreach(Figure figure in shapes)
+            foreach (Figure figure in shapes)
             {
                 Series series = new Series();
                 series.ChartType = SeriesChartType.Point;
