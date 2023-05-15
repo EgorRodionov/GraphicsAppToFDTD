@@ -61,19 +61,39 @@ namespace WindowsFormsApp1
         // Отображаем фигуры на Chart
         private void ShowShapesOnChart(List<Figure> shapes, Rectanglee rectanglee)
         {
-            DialogForm2 dialogForm2 = this.Owner as DialogForm2;
-            foreach (Figure figure in shapes)
-            {
-                Series series = new Series();
-                series.ChartType = SeriesChartType.Point;
-                series.MarkerSize = (int)Math.Max(rectanglee.Width, rectanglee.Height); // задаем размер символа
-                series.MarkerStyle = MarkerStyle.Square;
-                // Добавляем точку на элемент Chart
-                series.Points.AddXY(figure.x, figure.y);
-                // Добавляем серию на элемент Chart
-                dialogForm2.chart1.Series.Add(series);
+            //DialogForm2 dialogForm2 = this.Owner as DialogForm2;
+            //foreach (Figure figure in shapes)
+            //{
+            //    Series series = new Series();
+            //    series.ChartType = SeriesChartType.Point;
+            //    series.MarkerSize = (int)Math.Max(rectanglee.Width, rectanglee.Height); // задаем размер символа
+            //    series.MarkerStyle = MarkerStyle.Square;
+            //    // Добавляем точку на элемент Chart
+            //    series.Points.AddXY(figure.x, figure.y);
+            //    // Добавляем серию на элемент Chart
+            //    dialogForm2.chart1.Series.Add(series);
 
-            }
+            //}
+
+            DialogForm2 dialogForm2 = this.Owner as DialogForm2;
+
+            // Вычисляем координаты вершин прямоугольника
+            double left = rectanglee.X - rectanglee.Width / 2;
+            double top = rectanglee.Y - rectanglee.Height / 2;
+            double right = rectanglee.X + rectanglee.Width / 2;
+            double bottom = rectanglee.Y + rectanglee.Height / 2;
+
+            // Получаем объект Graphics для поверхности графика
+            Graphics graphics = dialogForm2.chart1.CreateGraphics();
+
+            // Заливаем прямоугольник красным цветом
+            graphics.FillRectangle(Brushes.Red, (float)left, (float)top, (float)rectanglee.Width, (float)rectanglee.Height);
+
+            // Рисуем прямоугольник на графике
+            graphics.DrawRectangle(Pens.Black, (float)left, (float)top, (float)rectanglee.Width, (float)rectanglee.Height);
+
+            // Освобождаем ресурсы
+            graphics.Dispose();
         }
     }
 }

@@ -125,28 +125,28 @@ namespace WindowsFormsApp1
         }
         private void ShowFigureBtn_Click(object sender, EventArgs e)
         {
-            if (BoxForObjectListBox.Items.Count != 0)
-            {
-                chart1.Series.Clear();
-                foreach (Figure figure in Figures)
-                {
-                    Series series = new Series();
-                    series.ChartType = SeriesChartType.Point;
-                    series.MarkerSize = (int)Math.Max(figure.x, figure.y); // задаем размер символа
+            //if (BoxForObjectListBox.Items.Count != 0)
+            //{
+            //    chart1.Series.Clear();
+            //    foreach (Figure figure in Figures)
+            //    {
+            //        Series series = new Series();
+            //        series.ChartType = SeriesChartType.Point;
+            //        series.MarkerSize = (int)Math.Max(figure.x, figure.y); // задаем размер символа
 
-                    if (figure is WindowsFormsApp1.Rectanglee rectangle) //проверка типа каждого элемента списка 
-                        series.MarkerStyle = MarkerStyle.Square;
-                    else
-                        series.MarkerStyle = MarkerStyle.Circle;
+            //        if (figure is WindowsFormsApp1.Rectanglee rectangle) //проверка типа каждого элемента списка 
+            //            series.MarkerStyle = MarkerStyle.Square;
+            //        else
+            //            series.MarkerStyle = MarkerStyle.Circle;
 
-                    // Добавляем точку на элемент Chart
-                    series.Points.AddXY(figure.x, figure.y);
-                    // Добавляем серию на элемент Chart
-                    chart1.Series.Add(series);
-                }
-            }
-            else
-                MessageBox.Show("Нужно добавить объекты!");
+            //        // Добавляем точку на элемент Chart
+            //        series.Points.AddXY(figure.x, figure.y);
+            //        // Добавляем серию на элемент Chart
+            //        chart1.Series.Add(series);
+            //    }
+            //}
+            //else
+            //    MessageBox.Show("Нужно добавить объекты!");
         }
     }
 }
