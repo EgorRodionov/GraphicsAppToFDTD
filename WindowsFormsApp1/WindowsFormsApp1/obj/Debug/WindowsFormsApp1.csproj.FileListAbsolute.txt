@@ -14,3 +14,5 @@ C:\Users\Пользователь\Desktop\Диплом\Графическое п
 C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CharacteristicForSourceForm.resources
 C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CharacteristicForEllipsForm.resources
 C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Authorization.resources
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.RegistrTeacher.resources
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.RegistrStudent.resources

@@ -35,5 +35,11 @@ namespace WindowsFormsApp1
             this.Dispose();
             authorization.ShowDialog();
         }
+
+        private void RegistrBtn_Click(object sender, EventArgs e)
+        {
+            RegistrTeacher registrTeacher = new RegistrTeacher();
+            registrTeacher.ShowDialog();
+        }
     }
 }

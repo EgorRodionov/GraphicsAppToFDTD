@@ -31,8 +31,8 @@ namespace WindowsFormsApp1
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogForm1));
             this.StartExperimentBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.DataBaseBtn = new System.Windows.Forms.Button();
+            this.RegistrBtn = new System.Windows.Forms.Button();
             this.menuBtn = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.RoleLabel2 = new System.Windows.Forms.Label();
@@ -58,33 +58,34 @@ namespace WindowsFormsApp1
             this.StartExperimentBtn.UseVisualStyleBackColor = false;
             this.StartExperimentBtn.Click += new System.EventHandler(this.StartExperimentBtn_Click);
             // 
-            // button1
+            // DataBaseBtn
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.Gainsboro;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(270, 503);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(431, 84);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "База данных";
-            this.button1.UseVisualStyleBackColor = false;
+            this.DataBaseBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DataBaseBtn.BackColor = System.Drawing.Color.Gainsboro;
+            this.DataBaseBtn.FlatAppearance.BorderSize = 0;
+            this.DataBaseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DataBaseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DataBaseBtn.Location = new System.Drawing.Point(270, 503);
+            this.DataBaseBtn.Name = "DataBaseBtn";
+            this.DataBaseBtn.Size = new System.Drawing.Size(431, 84);
+            this.DataBaseBtn.TabIndex = 1;
+            this.DataBaseBtn.Text = "База данных";
+            this.DataBaseBtn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // RegistrBtn
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.Yellow;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(270, 628);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(431, 84);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Зарегистрировать";
-            this.button2.UseVisualStyleBackColor = false;
+            this.RegistrBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.RegistrBtn.BackColor = System.Drawing.Color.Yellow;
+            this.RegistrBtn.FlatAppearance.BorderSize = 0;
+            this.RegistrBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegistrBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RegistrBtn.Location = new System.Drawing.Point(270, 628);
+            this.RegistrBtn.Name = "RegistrBtn";
+            this.RegistrBtn.Size = new System.Drawing.Size(431, 84);
+            this.RegistrBtn.TabIndex = 2;
+            this.RegistrBtn.Text = "Зарегистрировать";
+            this.RegistrBtn.UseVisualStyleBackColor = false;
+            this.RegistrBtn.Click += new System.EventHandler(this.RegistrBtn_Click);
             // 
             // menuBtn
             // 
@@ -155,8 +156,8 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.loginPanel);
             this.Controls.Add(this.menuBtn);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.RegistrBtn);
+            this.Controls.Add(this.DataBaseBtn);
             this.Controls.Add(this.StartExperimentBtn);
             this.Name = "DialogForm1";
             this.Text = "ВЛП";
@@ -174,8 +175,8 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.Button StartExperimentBtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button DataBaseBtn;
+        private System.Windows.Forms.Button RegistrBtn;
         private System.Windows.Forms.PictureBox menuBtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label RoleLabel2;

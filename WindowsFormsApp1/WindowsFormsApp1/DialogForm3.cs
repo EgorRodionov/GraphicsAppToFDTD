@@ -86,8 +86,11 @@ namespace WindowsFormsApp1
             // Получаем объект Graphics для поверхности графика
             Graphics graphics = dialogForm2.chart1.CreateGraphics();
 
+            Random random = new Random();
+            Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+
             // Заливаем прямоугольник красным цветом
-            graphics.FillRectangle(Brushes.Red, (float)left, (float)top, (float)rectanglee.Width, (float)rectanglee.Height);
+            graphics.FillRectangle(new SolidBrush(color), (float)left, (float)top, (float)rectanglee.Width, (float)rectanglee.Height);
 
             // Рисуем прямоугольник на графике
             graphics.DrawRectangle(Pens.Black, (float)left, (float)top, (float)rectanglee.Width, (float)rectanglee.Height);
