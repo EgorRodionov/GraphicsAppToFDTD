@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace WindowsFormsApp1
 {
     class DB
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-D8HTPE7;Initial Catalog=VirtualLaboratoryWorkshop;Integrated Security=True");
+        SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
 
         public void openConnection()
         {

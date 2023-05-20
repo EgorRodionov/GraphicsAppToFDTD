@@ -148,5 +148,10 @@ namespace WindowsFormsApp1
             //else
             //    MessageBox.Show("Нужно добавить объекты!");
         }
+
+        private void DialogForm2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

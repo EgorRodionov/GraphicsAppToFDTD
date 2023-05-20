@@ -168,7 +168,6 @@ namespace WindowsFormsApp1
             else if (PasswordRetrytextBox.Text == PasswordTextBox2.Text && command.ExecuteNonQuery() > 0)
             {
                 MessageBox.Show("Аккаунт успешно создан!", "Успех!");
-                //this.Close();
             }
             else
                 MessageBox.Show("Пароль не совпадает! Аккаунт не создан.", "Ошибка!");

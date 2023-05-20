@@ -56,12 +56,15 @@ namespace WindowsFormsApp1
             this.label2 = new System.Windows.Forms.Label();
             this.TextBoxHm = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.WidthtextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.loginPanel = new System.Windows.Forms.Panel();
             this.Loginlabel2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -88,7 +91,7 @@ namespace WindowsFormsApp1
             // reset
             // 
             this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reset.Location = new System.Drawing.Point(728, 743);
+            this.reset.Location = new System.Drawing.Point(728, 763);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(200, 50);
             this.reset.TabIndex = 31;
@@ -98,7 +101,7 @@ namespace WindowsFormsApp1
             // saveParametrs
             // 
             this.saveParametrs.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saveParametrs.Location = new System.Drawing.Point(728, 675);
+            this.saveParametrs.Location = new System.Drawing.Point(728, 695);
             this.saveParametrs.Name = "saveParametrs";
             this.saveParametrs.Size = new System.Drawing.Size(200, 50);
             this.saveParametrs.TabIndex = 30;
@@ -108,7 +111,7 @@ namespace WindowsFormsApp1
             // calculate
             // 
             this.calculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.calculate.Location = new System.Drawing.Point(728, 607);
+            this.calculate.Location = new System.Drawing.Point(728, 627);
             this.calculate.Name = "calculate";
             this.calculate.Size = new System.Drawing.Size(200, 50);
             this.calculate.TabIndex = 29;
@@ -161,7 +164,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 194);
+            this.label2.Location = new System.Drawing.Point(10, 244);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(287, 29);
             this.label2.TabIndex = 3;
@@ -169,34 +172,69 @@ namespace WindowsFormsApp1
             // 
             // TextBoxHm
             // 
-            this.TextBoxHm.Location = new System.Drawing.Point(649, 191);
+            this.TextBoxHm.Location = new System.Drawing.Point(649, 241);
             this.TextBoxHm.Name = "TextBoxHm";
             this.TextBoxHm.Size = new System.Drawing.Size(249, 34);
             this.TextBoxHm.TabIndex = 2;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.WidthtextBox);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.textBox4);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.TextBoxHm);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(17, 141);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(935, 365);
+            this.groupBox3.Size = new System.Drawing.Size(935, 376);
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Параметры";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(597, 104);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 29);
+            this.label5.TabIndex = 46;
+            this.label5.Text = "Высота";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(702, 101);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(196, 34);
+            this.textBox1.TabIndex = 45;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(589, 57);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 29);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Ширина";
+            // 
+            // WidthtextBox
+            // 
+            this.WidthtextBox.Location = new System.Drawing.Point(702, 54);
+            this.WidthtextBox.Name = "WidthtextBox";
+            this.WidthtextBox.Size = new System.Drawing.Size(196, 34);
+            this.WidthtextBox.TabIndex = 43;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(10, 254);
+            this.label9.Location = new System.Drawing.Point(10, 304);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(289, 29);
             this.label9.TabIndex = 19;
@@ -204,7 +242,7 @@ namespace WindowsFormsApp1
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(649, 251);
+            this.textBox4.Location = new System.Drawing.Point(649, 301);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(249, 34);
             this.textBox4.TabIndex = 18;
@@ -212,7 +250,7 @@ namespace WindowsFormsApp1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 133);
+            this.label7.Location = new System.Drawing.Point(10, 183);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(359, 29);
             this.label7.TabIndex = 15;
@@ -220,7 +258,7 @@ namespace WindowsFormsApp1
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(649, 130);
+            this.textBox2.Location = new System.Drawing.Point(649, 180);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(249, 34);
             this.textBox2.TabIndex = 14;
@@ -233,13 +271,6 @@ namespace WindowsFormsApp1
             this.label6.Size = new System.Drawing.Size(534, 29);
             this.label6.TabIndex = 13;
             this.label6.Text = "Размеры расчётной области в микрометрах:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(649, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 34);
-            this.textBox1.TabIndex = 12;
             // 
             // loginPanel
             // 
@@ -389,7 +420,7 @@ namespace WindowsFormsApp1
             this.groupBox4.Controls.Add(this.checkBox1);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(17, 540);
+            this.groupBox4.Location = new System.Drawing.Point(17, 560);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(679, 286);
             this.groupBox4.TabIndex = 32;
@@ -493,7 +524,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox3;
@@ -502,6 +532,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox WidthtextBox;
     }
 }
 

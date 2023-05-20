@@ -151,11 +151,11 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 185);
+            this.label3.Location = new System.Drawing.Point(26, 185);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 29);
+            this.label3.Size = new System.Drawing.Size(249, 29);
             this.label3.TabIndex = 24;
-            this.label3.Text = "Точка привязки:";
+            this.label3.Text = "Левый нижний угол:";
             // 
             // WidthObjectTextBox
             // 
@@ -167,7 +167,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 77);
+            this.label2.Location = new System.Drawing.Point(69, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(206, 29);
             this.label2.TabIndex = 22;

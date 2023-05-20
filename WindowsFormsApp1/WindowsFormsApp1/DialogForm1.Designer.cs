@@ -71,6 +71,7 @@ namespace WindowsFormsApp1
             this.DataBaseBtn.TabIndex = 1;
             this.DataBaseBtn.Text = "База данных";
             this.DataBaseBtn.UseVisualStyleBackColor = false;
+            this.DataBaseBtn.Click += new System.EventHandler(this.DataBaseBtn_Click);
             // 
             // RegistrBtn
             // 

@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
             }
             this.Hide();
         }
-        
+
 
         // Отображаем фигуры на Chart
         private void ShowShapesOnChart(List<Figure> shapes, Rectanglee rectanglee)
@@ -78,22 +78,23 @@ namespace WindowsFormsApp1
             DialogForm2 dialogForm2 = this.Owner as DialogForm2;
 
             // Вычисляем координаты вершин прямоугольника
-            double left = rectanglee.X - rectanglee.Width / 2;
-            double top = rectanglee.Y - rectanglee.Height / 2;
-            double right = rectanglee.X + rectanglee.Width / 2;
-            double bottom = rectanglee.Y + rectanglee.Height / 2;
+            double left = rectanglee.BottomLeftPoint.X;
+            double top = rectanglee.BottomLeftPoint.Y;
+            double right = rectanglee.BottomLeftPoint.X + rectanglee.Width;
+            double bottom = rectanglee.BottomLeftPoint.Y - rectanglee.Height;
 
             // Получаем объект Graphics для поверхности графика
             Graphics graphics = dialogForm2.chart1.CreateGraphics();
-
+            // Устанавливаем преобразование координат для смещения начала координат вниз
+            graphics.TranslateTransform(0, dialogForm2.chart1.Height);
             Random random = new Random();
             Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
 
             // Заливаем прямоугольник красным цветом
-            graphics.FillRectangle(new SolidBrush(color), (float)left, (float)top, (float)rectanglee.Width, (float)rectanglee.Height);
+            graphics.FillRectangle(new SolidBrush(color), (float)left, (float)bottom, (float)rectanglee.Width, (float)rectanglee.Height);
 
             // Рисуем прямоугольник на графике
-            graphics.DrawRectangle(Pens.Black, (float)left, (float)top, (float)rectanglee.Width, (float)rectanglee.Height);
+            graphics.DrawRectangle(Pens.Black, (float)left, (float)bottom, (float)rectanglee.Width, (float)rectanglee.Height);
 
             // Освобождаем ресурсы
             graphics.Dispose();

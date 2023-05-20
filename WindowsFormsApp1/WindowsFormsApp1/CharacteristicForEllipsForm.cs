@@ -109,6 +109,8 @@ namespace WindowsFormsApp1
             Random random = new Random();
             Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
             Graphics g = dialogForm2.chart1.CreateGraphics();
+            // Устанавливаем преобразование координат для смещения начала координат вниз
+            g.TranslateTransform(0, dialogForm2.chart1.Height);
             g.FillEllipse(new SolidBrush(color), (float)(ellipse.x - ellipse.r1), (float)(ellipse.y - ellipse.r2), (float)(2 * ellipse.r1), (float)(2 * ellipse.r2));
             g.DrawEllipse(Pens.Black, (float)(ellipse.x - ellipse.r1), (float)(ellipse.y - ellipse.r2), (float)(2 * ellipse.r1), (float)(2 * ellipse.r2));
             g.Dispose();

@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
         public double Height { get; set; }
         public double X { get; set; }
         public double Y { get; set; }
+        public Point BottomLeftPoint { get; set; } //поле для хранения точки привязки
 
         public Rectanglee(double x, double y, double width, double height) : base(x,y)
         {
@@ -20,6 +21,13 @@ namespace WindowsFormsApp1
             this.Height = height;
             this.X = x;
             this.Y = y;
+
+            // Вычисляем координаты вершин прямоугольника
+            double left = x;
+            double bottom = y;
+
+            // Устанавливаем точку привязки в левый нижний угол
+            BottomLeftPoint = new Point((int)left, (int)bottom);
         }
 
         public override bool IsPointFigure(Point point)

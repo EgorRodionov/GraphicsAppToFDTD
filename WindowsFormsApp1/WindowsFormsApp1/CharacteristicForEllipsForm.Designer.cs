@@ -171,9 +171,9 @@ namespace WindowsFormsApp1
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(44, 211);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 29);
+            this.label3.Size = new System.Drawing.Size(183, 29);
             this.label3.TabIndex = 24;
-            this.label3.Text = "Точка привязки:";
+            this.label3.Text = "Центр фигуры:";
             // 
             // r1TextBox
             // 

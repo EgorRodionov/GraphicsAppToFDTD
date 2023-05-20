@@ -41,5 +41,11 @@ namespace WindowsFormsApp1
             RegistrTeacher registrTeacher = new RegistrTeacher();
             registrTeacher.ShowDialog();
         }
+
+        private void DataBaseBtn_Click(object sender, EventArgs e)
+        {
+            DataBaseForm dbform = new DataBaseForm();
+            dbform.ShowDialog();
+        }
     }
 }
