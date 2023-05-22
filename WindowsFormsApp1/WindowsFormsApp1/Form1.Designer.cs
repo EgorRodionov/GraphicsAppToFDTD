@@ -172,9 +172,10 @@ namespace WindowsFormsApp1
             // 
             // TextBoxHm
             // 
+            this.TextBoxHm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextBoxHm.Location = new System.Drawing.Point(649, 241);
             this.TextBoxHm.Name = "TextBoxHm";
-            this.TextBoxHm.Size = new System.Drawing.Size(249, 34);
+            this.TextBoxHm.Size = new System.Drawing.Size(249, 30);
             this.TextBoxHm.TabIndex = 2;
             // 
             // groupBox3
@@ -210,9 +211,10 @@ namespace WindowsFormsApp1
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(702, 101);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 34);
+            this.textBox1.Size = new System.Drawing.Size(196, 30);
             this.textBox1.TabIndex = 45;
             // 
             // label3
@@ -226,9 +228,10 @@ namespace WindowsFormsApp1
             // 
             // WidthtextBox
             // 
+            this.WidthtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WidthtextBox.Location = new System.Drawing.Point(702, 54);
             this.WidthtextBox.Name = "WidthtextBox";
-            this.WidthtextBox.Size = new System.Drawing.Size(196, 34);
+            this.WidthtextBox.Size = new System.Drawing.Size(196, 30);
             this.WidthtextBox.TabIndex = 43;
             // 
             // label9
@@ -242,9 +245,10 @@ namespace WindowsFormsApp1
             // 
             // textBox4
             // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4.Location = new System.Drawing.Point(649, 301);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(249, 34);
+            this.textBox4.Size = new System.Drawing.Size(249, 30);
             this.textBox4.TabIndex = 18;
             // 
             // label7
@@ -258,9 +262,10 @@ namespace WindowsFormsApp1
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.Location = new System.Drawing.Point(649, 180);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(249, 34);
+            this.textBox2.Size = new System.Drawing.Size(249, 30);
             this.textBox2.TabIndex = 14;
             // 
             // label6

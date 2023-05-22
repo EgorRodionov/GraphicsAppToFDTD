@@ -40,38 +40,48 @@ namespace WindowsFormsApp1
 
         private void AddObjectBtn_Click(object sender, EventArgs e)
         {
-            if (ObjectComboBox.SelectedItem.ToString() == "Прямоугольник")
+            if (ObjectComboBox.SelectedIndex > -1)
             {
-                string selectValue = ObjectComboBox.SelectedItem.ToString();
-                DialogForm3 dialogForm3 = new DialogForm3(selectValue);
-                dialogForm3.Owner = this;
-                dialogForm3.ShowDialog();
+                if (ObjectComboBox.SelectedItem.ToString() == "Прямоугольник")
+                {
+                    string selectValue = ObjectComboBox.SelectedItem.ToString();
+                    DialogForm3 dialogForm3 = new DialogForm3(selectValue);
+                    dialogForm3.Owner = this;
+                    dialogForm3.ShowDialog();
+                }
+                else
+                {
+                    string selectValue = ObjectComboBox.SelectedItem.ToString();
+                    CharacteristicForEllipsForm characteristicForEllipsForm = new CharacteristicForEllipsForm(selectValue);
+                    characteristicForEllipsForm.Owner = this;
+                    characteristicForEllipsForm.ShowDialog();
+                }
             }
             else
-            {
-                string selectValue = ObjectComboBox.SelectedItem.ToString();
-                CharacteristicForEllipsForm characteristicForEllipsForm = new CharacteristicForEllipsForm(selectValue);
-                characteristicForEllipsForm.Owner = this;
-                characteristicForEllipsForm.ShowDialog();
-            }
+                MessageBox.Show("ВЫберите объекты из списка!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void AddCharacteristicsBtn_Click(object sender, EventArgs e)
         {
-            if (SourceComboBox.SelectedItem.ToString() == "Точечные")
+            if (SourceComboBox.SelectedIndex > -1)
             {
-                string selectValue = SourceComboBox.SelectedItem.ToString();
-                CharacteristicForSourceForm characteristicForSourceForm = new CharacteristicForSourceForm(selectValue);
-                characteristicForSourceForm.Owner = this;
-                characteristicForSourceForm.ShowDialog();
+                if (SourceComboBox.SelectedItem.ToString() == "Точечные")
+                {
+                    string selectValue = SourceComboBox.SelectedItem.ToString();
+                    CharacteristicForSourceForm characteristicForSourceForm = new CharacteristicForSourceForm(selectValue);
+                    characteristicForSourceForm.Owner = this;
+                    characteristicForSourceForm.ShowDialog();
+                }
+                else
+                {
+                    string selectValue = SourceComboBox.SelectedItem.ToString();
+                    CharacteristicForSourceForm characteristicForSourceForm2 = new CharacteristicForSourceForm(selectValue);
+                    characteristicForSourceForm2.Owner = this;
+                    characteristicForSourceForm2.ShowDialog();
+                }
             }
             else
-            {
-                string selectValue = SourceComboBox.SelectedItem.ToString();
-                CharacteristicForSourceForm characteristicForSourceForm2 = new CharacteristicForSourceForm(selectValue);
-                characteristicForSourceForm2.Owner = this;
-                characteristicForSourceForm2.ShowDialog();
-            }
+                MessageBox.Show("ВЫберите источник из списка!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void ClearObjectBtn_Click(object sender, EventArgs e)
@@ -147,11 +157,101 @@ namespace WindowsFormsApp1
             //}
             //else
             //    MessageBox.Show("Нужно добавить объекты!");
+
+
+
+            try
+            {
+                int width = int.Parse(WidthtextBox.Text);
+                int height = int.Parse(HeightTextBox.Text);
+                // Создание объекта Bitmap для рисования графика
+                Bitmap bitmap = new Bitmap(width, height);
+
+                if (BoxForObjectListBox.Items.Count != 0)
+                {
+                    foreach (Figure figure in Figures)
+                    {
+
+                        if (figure is WindowsFormsApp1.Rectanglee rectangle) //проверка типа каждого элемента списка 
+                        {
+                            // Создание объекта Graphics из Bitmap
+                            using (Graphics graphics = Graphics.FromImage(bitmap))
+                            {
+                                // Получаем координаты вершин прямоугольника
+                                double left = ((Rectanglee)figure).BottomLeftPoint.X;
+                                double top = ((Rectanglee)figure).BottomLeftPoint.Y;
+                                double right = ((Rectanglee)figure).BottomLeftPoint.X + ((Rectanglee)figure).Width;
+                                double bottom = ((Rectanglee)figure).BottomLeftPoint.Y - ((Rectanglee)figure).Height;
+
+                                // Устанавливаем преобразование координат для смещения начала координат вниз
+                                //graphics.TranslateTransform(0, dialogForm2.chart1.Height);
+
+                                    Random random = new Random();
+                                    Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+
+                                    // Заливка прямоугольника цветом
+                                    graphics.FillRectangle(new SolidBrush(color), (float)left, (float)bottom, (float)((Rectanglee)figure).Width,
+                                        (float)((Rectanglee)figure).Height);
+
+                                    // Рисование границы прямоугольника
+                                    graphics.DrawRectangle(Pens.Black, (float)left, (float)bottom, (float)((Rectanglee)figure).Width,
+                                        (float)((Rectanglee)figure).Height);
+
+                                    // Отобразить графический объект на элементе управления Chart
+                                    chart1.CreateGraphics().DrawImage(bitmap, 0, 0);
+                                
+                            }
+                        }
+                        else
+                        {
+                            // Создание объекта Graphics из Bitmap
+                            using (Graphics graphics = Graphics.FromImage(bitmap))
+                            {
+                                    Random random = new Random();
+                                    Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+                                    // Заливка эллипса цветом
+                                    graphics.FillEllipse(new SolidBrush(color), (float)(((Ellipse)figure).x - ((Ellipse)figure).r1),
+                                        (float)(((Ellipse)figure).y - ((Ellipse)figure).r2), (float)(2 * ((Ellipse)figure).r1),
+                                        (float)(2 * ((Ellipse)figure).r2));
+                                    // Рисование границы эллипса
+                                    graphics.DrawEllipse(Pens.Black, (float)(((Ellipse)figure).x - ((Ellipse)figure).r1),
+                                        (float)(((Ellipse)figure).y - ((Ellipse)figure).r2), (float)(2 * ((Ellipse)figure).r1),
+                                        (float)(2 * ((Ellipse)figure).r2));
+
+                                    // Отобразить графический объект на элементе управления Chart
+                                    chart1.CreateGraphics().DrawImage(bitmap, 0, 0);
+                                
+                            }
+                        }
+
+                    }
+                }
+                else
+                    MessageBox.Show("Нужно добавить объекты!");
+            }
+            catch
+            {
+                MessageBox.Show("Введите размеры расчетной области!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
-        private void DialogForm2_Load(object sender, EventArgs e)
+        private void chart1_Paint(object sender, PaintEventArgs e)
         {
+            // Создание объекта Graphics из PaintEventArgs
+            Graphics graphics = e.Graphics;
 
+            // Рисование сетки по оси X
+            for (int x = 0; x <= chart1.Width; x += 50) // Интервал между линиями сетки по оси X
+            {
+                graphics.DrawLine(Pens.LightGray, x, 0, x, chart1.Height);
+                graphics.DrawString(x.ToString(), Font, Brushes.Black, x, chart1.Height - 20);
+            }
+            // Рисование сетки по оси Y
+            for (int y = 0; y <= chart1.Height; y += 50) // Интервал между линиями сетки по оси Y
+            {
+                graphics.DrawLine(Pens.LightGray, 0, y, chart1.Width, y);
+                graphics.DrawString(y.ToString(), Font, Brushes.Black, 5, y);
+            }
         }
     }
 }

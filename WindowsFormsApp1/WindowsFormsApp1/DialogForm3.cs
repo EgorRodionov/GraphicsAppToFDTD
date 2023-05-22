@@ -31,28 +31,38 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Заполните все поля!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            DialogForm2 dialogForm2 = this.Owner as DialogForm2;
+            int width = int.Parse(dialogForm2.WidthtextBox.Text);
+            int height = int.Parse(dialogForm2.HeightTextBox.Text);
 
             double WidthObject = double.Parse(WidthObjectTextBox.Text);
             double HeightObject = double.Parse(HeightObjectTextBox.Text);
             double CoordinateX = double.Parse(CoordinateXtextBox.Text);
             double CoordinateY = double.Parse(CoordinateYtextBox.Text);
 
-            //передаем данные в класс
-            Rectanglee rectanglee = new Rectanglee(CoordinateX, CoordinateY, WidthObject, HeightObject);
-            Figures.Add(rectanglee);
+            if (CoordinateX >= 0 && CoordinateX <= width && CoordinateY >= 0 && CoordinateY <= height)
+            {
+                //передаем данные в класс
+                Rectanglee rectanglee = new Rectanglee(CoordinateX, CoordinateY, WidthObject, HeightObject);
+                Figures.Add(rectanglee);
+            }
+            else
+            {
+                MessageBox.Show("Точка привязки прямоугольника выходит за границы расчетной области!");
+                return;
+            }
 
-            DialogForm2 dialogForm2 = this.Owner as DialogForm2;
 
             if (dialogForm2 != null)
             {
                 foreach (Figure figure in Figures)
                 {
                     dialogForm2.BoxForObjectListBox.Items.Add(string.Format("{0}: Ширина: {1}, Высота: {2}, " +
-                        "Точка привязки: x = {3} y = {4}", _selectValue, rectanglee.Width, rectanglee.Height, figure.x, figure.y));
+                        "Точка привязки: x = {3} y = {4}", _selectValue, WidthObject, HeightObject, figure.x, figure.y));
                     dialogForm2.Figures.Add(figure);
                 }
 
-                ShowShapesOnChart(Figures, rectanglee);
+                //ShowShapesOnChart(Figures, rectanglee);
             }
             this.Hide();
         }
@@ -77,27 +87,71 @@ namespace WindowsFormsApp1
 
             DialogForm2 dialogForm2 = this.Owner as DialogForm2;
 
-            // Вычисляем координаты вершин прямоугольника
-            double left = rectanglee.BottomLeftPoint.X;
-            double top = rectanglee.BottomLeftPoint.Y;
-            double right = rectanglee.BottomLeftPoint.X + rectanglee.Width;
-            double bottom = rectanglee.BottomLeftPoint.Y - rectanglee.Height;
+            //// Вычисляем координаты вершин прямоугольника
+            //double left = rectanglee.BottomLeftPoint.X;
+            //double top = rectanglee.BottomLeftPoint.Y;
+            //double right = rectanglee.BottomLeftPoint.X + rectanglee.Width;
+            //double bottom = rectanglee.BottomLeftPoint.Y - rectanglee.Height;
 
-            // Получаем объект Graphics для поверхности графика
-            Graphics graphics = dialogForm2.chart1.CreateGraphics();
-            // Устанавливаем преобразование координат для смещения начала координат вниз
-            graphics.TranslateTransform(0, dialogForm2.chart1.Height);
-            Random random = new Random();
-            Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+            //// Получаем объект Graphics для поверхности графика
+            //Graphics graphics = dialogForm2.chart1.CreateGraphics();
+            //// Устанавливаем преобразование координат для смещения начала координат вниз
+            //graphics.TranslateTransform(0, dialogForm2.chart1.Height);
 
-            // Заливаем прямоугольник красным цветом
-            graphics.FillRectangle(new SolidBrush(color), (float)left, (float)bottom, (float)rectanglee.Width, (float)rectanglee.Height);
+            //Random random = new Random();
+            //Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
 
-            // Рисуем прямоугольник на графике
-            graphics.DrawRectangle(Pens.Black, (float)left, (float)bottom, (float)rectanglee.Width, (float)rectanglee.Height);
+            //// Заливаем прямоугольник красным цветом
+            //graphics.FillRectangle(new SolidBrush(color), (float)left, (float)bottom, (float)rectanglee.Width, (float)rectanglee.Height);
 
-            // Освобождаем ресурсы
-            graphics.Dispose();
+            //// Рисуем прямоугольник на графике
+            //graphics.DrawRectangle(Pens.Black, (float)left, (float)bottom, (float)rectanglee.Width, (float)rectanglee.Height);
+
+            //// Освобождаем ресурсы
+            //graphics.Dispose();
+
+
+
+            int width = int.Parse(dialogForm2.WidthtextBox.Text);
+            int height = int.Parse(dialogForm2.HeightTextBox.Text);
+            // Создание объекта Bitmap для рисования графика
+            Bitmap bitmap = new Bitmap(width, height);
+
+            // Создание объекта Graphics из Bitmap
+            using (Graphics graphics = Graphics.FromImage(bitmap))
+            {
+                // Получаем координаты вершин прямоугольника
+                double left = rectanglee.BottomLeftPoint.X;
+                double top = rectanglee.BottomLeftPoint.Y;
+                double right = rectanglee.BottomLeftPoint.X + rectanglee.Width;
+                double bottom = rectanglee.BottomLeftPoint.Y - rectanglee.Height;
+
+                // Устанавливаем преобразование координат для смещения начала координат вниз
+                //graphics.TranslateTransform(0, dialogForm2.chart1.Height);
+
+                Random random = new Random();
+                Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+
+                // Заливка прямоугольника цветом
+                graphics.FillRectangle(new SolidBrush(color), (float)left, (float)bottom, (float)rectanglee.Width, (float)rectanglee.Height);
+
+                // Рисование границы прямоугольника
+                graphics.DrawRectangle(Pens.Black, (float)left, (float)bottom, (float)rectanglee.Width, (float)rectanglee.Height);
+
+                // Отобразить графический объект на элементе управления Chart
+                dialogForm2.chart1.CreateGraphics().DrawImage(bitmap, 0, 0);
+            }
+
+            // Освобождение ресурсов
+            bitmap.Dispose();
+
+
+        }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы действительно хотите отменить?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Close();
         }
     }
 }

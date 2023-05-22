@@ -102,9 +102,10 @@ namespace WindowsFormsApp1
             // 
             // CoordinateYtextBox
             // 
+            this.CoordinateYtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CoordinateYtextBox.Location = new System.Drawing.Point(436, 182);
             this.CoordinateYtextBox.Name = "CoordinateYtextBox";
-            this.CoordinateYtextBox.Size = new System.Drawing.Size(64, 34);
+            this.CoordinateYtextBox.Size = new System.Drawing.Size(64, 30);
             this.CoordinateYtextBox.TabIndex = 32;
             // 
             // label7
@@ -118,9 +119,10 @@ namespace WindowsFormsApp1
             // 
             // CoordinateXtextBox
             // 
+            this.CoordinateXtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CoordinateXtextBox.Location = new System.Drawing.Point(324, 182);
             this.CoordinateXtextBox.Name = "CoordinateXtextBox";
-            this.CoordinateXtextBox.Size = new System.Drawing.Size(64, 34);
+            this.CoordinateXtextBox.Size = new System.Drawing.Size(64, 30);
             this.CoordinateXtextBox.TabIndex = 30;
             // 
             // label5
@@ -134,9 +136,10 @@ namespace WindowsFormsApp1
             // 
             // HeightObjectTextBox
             // 
+            this.HeightObjectTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HeightObjectTextBox.Location = new System.Drawing.Point(436, 93);
             this.HeightObjectTextBox.Name = "HeightObjectTextBox";
-            this.HeightObjectTextBox.Size = new System.Drawing.Size(109, 34);
+            this.HeightObjectTextBox.Size = new System.Drawing.Size(109, 30);
             this.HeightObjectTextBox.TabIndex = 26;
             // 
             // label4
@@ -159,9 +162,10 @@ namespace WindowsFormsApp1
             // 
             // WidthObjectTextBox
             // 
+            this.WidthObjectTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WidthObjectTextBox.Location = new System.Drawing.Point(436, 53);
             this.WidthObjectTextBox.Name = "WidthObjectTextBox";
-            this.WidthObjectTextBox.Size = new System.Drawing.Size(109, 34);
+            this.WidthObjectTextBox.Size = new System.Drawing.Size(109, 30);
             this.WidthObjectTextBox.TabIndex = 21;
             // 
             // label2
@@ -203,6 +207,7 @@ namespace WindowsFormsApp1
             this.CancelBtn.TabIndex = 33;
             this.CancelBtn.Text = "Отмена";
             this.CancelBtn.UseVisualStyleBackColor = false;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // DialogForm3
             // 

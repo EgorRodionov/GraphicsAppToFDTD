@@ -31,6 +31,9 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Заполните все поля!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            DialogForm2 dialogForm2 = this.Owner as DialogForm2;
+            int width = int.Parse(dialogForm2.WidthtextBox.Text);
+            int height = int.Parse(dialogForm2.HeightTextBox.Text);
 
             double r1 = double.Parse(r1TextBox.Text);
             double r2 = double.Parse(r2TextBox.Text);
@@ -38,11 +41,18 @@ namespace WindowsFormsApp1
             double CoordinateX = double.Parse(CoordinateXtextBox.Text);
             double CoordinateY = double.Parse(CoordinateYtextBox.Text);
 
-            //передаем данные в класс
-            Ellipse ellipse = new Ellipse(CoordinateX, CoordinateY, r1, r2, focalDistance);
-            Figures.Add(ellipse);
+            if (CoordinateX >= 0 && CoordinateX <= width && CoordinateY >= 0 && CoordinateY <= height)
+            {
+                //передаем данные в класс
+                Ellipse ellipse = new Ellipse(CoordinateX, CoordinateY, r1, r2, focalDistance);
+                Figures.Add(ellipse);
+            }
+            else
+            {
+                MessageBox.Show("Точка привязки эллипса выходит за границы расчетной области!");
+                return;
+            }
 
-            DialogForm2 dialogForm2 = this.Owner as DialogForm2;
             if (dialogForm2 != null)
             {
                 foreach (Figure figure in Figures)
@@ -52,7 +62,7 @@ namespace WindowsFormsApp1
                         _selectValue, r1, r2, focalDistance, CoordinateX, CoordinateY));
                     dialogForm2.Figures.Add(figure);
                 }
-                ShowShapesOnChart(Figures, ellipse);
+                //ShowShapesOnChart(Figures, ellipse);
             }
             this.Hide();
         }
@@ -98,23 +108,53 @@ namespace WindowsFormsApp1
             //// Добавляем серию на элемент Chart
             //dialogForm2.chart1.Series.Add(ellipseSeries);
 
+
+
+
             // Создаем новый серию данных
+            //DialogForm2 dialogForm2 = this.Owner as DialogForm2;
+            //Series series = new Series();
+            //series.ChartType = SeriesChartType.Point;
+            //series.MarkerSize = 1; // Задаем размер символа равным 1, чтобы не мешал отображению эллипса
+            //series.MarkerStyle = MarkerStyle.None;
+
+            //// Добавляем эллипс на элемент Chart
+            //Random random = new Random();
+            //Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+            //Graphics g = dialogForm2.chart1.CreateGraphics();
+            //// Устанавливаем преобразование координат для смещения начала координат вниз
+            //g.TranslateTransform(0, dialogForm2.chart1.Height);
+            //g.FillEllipse(new SolidBrush(color), (float)(ellipse.x - ellipse.r1), (float)(ellipse.y - ellipse.r2), (float)(2 * ellipse.r1), (float)(2 * ellipse.r2));
+            //g.DrawEllipse(Pens.Black, (float)(ellipse.x - ellipse.r1), (float)(ellipse.y - ellipse.r2), (float)(2 * ellipse.r1), (float)(2 * ellipse.r2));
+            //g.Dispose();
+
+
+
+
             DialogForm2 dialogForm2 = this.Owner as DialogForm2;
-            Series series = new Series();
-            series.ChartType = SeriesChartType.Point;
-            series.MarkerSize = 1; // Задаем размер символа равным 1, чтобы не мешал отображению эллипса
-            series.MarkerStyle = MarkerStyle.None;
+            Bitmap bitmap = new Bitmap(dialogForm2.chart1.Width, dialogForm2.chart1.Height);
 
-            // Добавляем эллипс на элемент Chart
-            Random random = new Random();
-            Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
-            Graphics g = dialogForm2.chart1.CreateGraphics();
-            // Устанавливаем преобразование координат для смещения начала координат вниз
-            g.TranslateTransform(0, dialogForm2.chart1.Height);
-            g.FillEllipse(new SolidBrush(color), (float)(ellipse.x - ellipse.r1), (float)(ellipse.y - ellipse.r2), (float)(2 * ellipse.r1), (float)(2 * ellipse.r2));
-            g.DrawEllipse(Pens.Black, (float)(ellipse.x - ellipse.r1), (float)(ellipse.y - ellipse.r2), (float)(2 * ellipse.r1), (float)(2 * ellipse.r2));
-            g.Dispose();
+            // Создание объекта Graphics из Bitmap
+            using (Graphics graphics = Graphics.FromImage(bitmap))
+            {
+                Random random = new Random();
+                Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+                // Устанавливаем преобразование координат для смещения начала координат вниз
+                //g.TranslateTransform(0, dialogForm2.chart1.Height);
+                graphics.FillEllipse(new SolidBrush(color), (float)(ellipse.x - ellipse.r1), (float)(ellipse.y - ellipse.r2), (float)(2 * ellipse.r1), (float)(2 * ellipse.r2));
+                graphics.DrawEllipse(Pens.Black, (float)(ellipse.x - ellipse.r1), (float)(ellipse.y - ellipse.r2), (float)(2 * ellipse.r1), (float)(2 * ellipse.r2));
 
+                // Отобразить графический объект на элементе управления Chart
+                dialogForm2.chart1.CreateGraphics().DrawImage(bitmap, 0, 0);
+            }
+            // Освобождение ресурсов
+            bitmap.Dispose();
+        }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы действительно хотите отменить?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Close();
         }
     }
 }

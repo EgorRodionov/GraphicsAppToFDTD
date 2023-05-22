@@ -32,5 +32,11 @@ namespace WindowsFormsApp1
                 dialogForm2.BoxForSourceListBox.Items.Add(_selectValue);
             this.Hide();
         }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы действительно хотите отменить?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Close();
+        }
     }
 }
