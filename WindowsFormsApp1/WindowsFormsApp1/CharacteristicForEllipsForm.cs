@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
             double CoordinateX = double.Parse(CoordinateXtextBox.Text);
             double CoordinateY = double.Parse(CoordinateYtextBox.Text);
 
-            if (CoordinateX >= 0 && CoordinateX <= width && CoordinateY >= 0 && CoordinateY <= height)
+            if (CoordinateX >= 0 && CoordinateX <= width && CoordinateY >= 0 && CoordinateY <= height) //проверкf, не выходит ли точка привязки за границы расчетной области
             {
                 //передаем данные в класс
                 Ellipse ellipse = new Ellipse(CoordinateX, CoordinateY, r1, r2, focalDistance);
@@ -49,7 +49,8 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Точка привязки эллипса выходит за границы расчетной области!");
+                MessageBox.Show("Точка привязки эллипса выходит за границы расчетной области!", "Внимание", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 

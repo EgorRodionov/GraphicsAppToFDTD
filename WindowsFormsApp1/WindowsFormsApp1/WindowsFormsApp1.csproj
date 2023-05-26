@@ -103,6 +103,12 @@
       <DependentUpon>CharacteristicForEllipsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CheckUser.cs" />
+    <Compile Include="CreateTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateTaskForm.Designer.cs">
+      <DependentUpon>CreateTaskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,12 @@
     <Compile Include="RegistrTeacher.Designer.cs">
       <DependentUpon>RegistrTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="TaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskForm.Designer.cs">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddGroupForm.resx">
       <DependentUpon>AddGroupForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CharacteristicForEllipsForm.resx">
       <DependentUpon>CharacteristicForEllipsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateTaskForm.resx">
+      <DependentUpon>CreateTaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataBaseForm.resx">
       <DependentUpon>DataBaseForm.cs</DependentUpon>
@@ -248,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrTeacher.resx">
       <DependentUpon>RegistrTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskForm.resx">
+      <DependentUpon>TaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

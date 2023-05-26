@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
             double CoordinateX = double.Parse(CoordinateXtextBox.Text);
             double CoordinateY = double.Parse(CoordinateYtextBox.Text);
 
-            if (CoordinateX >= 0 && CoordinateX <= width && CoordinateY >= 0 && CoordinateY <= height)
+            if (CoordinateX >= 0 && CoordinateX <= width && CoordinateY >= 0 && CoordinateY <= height) //проверка, не выходит ли точка привязки за границы расчетной области
             {
                 //передаем данные в класс
                 Rectanglee rectanglee = new Rectanglee(CoordinateX, CoordinateY, WidthObject, HeightObject);
@@ -48,7 +48,8 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Точка привязки прямоугольника выходит за границы расчетной области!");
+                MessageBox.Show("Точка привязки прямоугольника выходит за границы расчетной области!", "Внимание", MessageBoxButtons.OK, 
+                    MessageBoxIcon.Warning);
                 return;
             }
 

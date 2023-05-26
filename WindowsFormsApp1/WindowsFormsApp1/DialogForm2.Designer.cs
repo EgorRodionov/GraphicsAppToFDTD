@@ -29,9 +29,9 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.BtnDown = new System.Windows.Forms.Button();
             this.BtnUp = new System.Windows.Forms.Button();
@@ -96,7 +96,7 @@ namespace WindowsFormsApp1
             this.BtnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BtnDown.ForeColor = System.Drawing.Color.Black;
-            this.BtnDown.Location = new System.Drawing.Point(1656, 186);
+            this.BtnDown.Location = new System.Drawing.Point(1666, 186);
             this.BtnDown.Name = "BtnDown";
             this.BtnDown.Size = new System.Drawing.Size(51, 36);
             this.BtnDown.TabIndex = 44;
@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
             this.BtnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BtnUp.ForeColor = System.Drawing.Color.Black;
-            this.BtnUp.Location = new System.Drawing.Point(1656, 143);
+            this.BtnUp.Location = new System.Drawing.Point(1666, 143);
             this.BtnUp.Name = "BtnUp";
             this.BtnUp.Size = new System.Drawing.Size(51, 37);
             this.BtnUp.TabIndex = 43;
@@ -148,7 +148,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(963, 107);
+            this.label2.Location = new System.Drawing.Point(889, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(276, 29);
             this.label2.TabIndex = 39;
@@ -156,13 +156,16 @@ namespace WindowsFormsApp1
             // 
             // BoxForSourceListBox
             // 
+            this.BoxForSourceListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.BoxForSourceListBox.FormattingEnabled = true;
             this.BoxForSourceListBox.HorizontalScrollbar = true;
             this.BoxForSourceListBox.ItemHeight = 29;
-            this.BoxForSourceListBox.Location = new System.Drawing.Point(968, 239);
+            this.BoxForSourceListBox.Location = new System.Drawing.Point(894, 239);
             this.BoxForSourceListBox.Name = "BoxForSourceListBox";
-            this.BoxForSourceListBox.Size = new System.Drawing.Size(682, 91);
+            this.BoxForSourceListBox.Size = new System.Drawing.Size(766, 91);
             this.BoxForSourceListBox.TabIndex = 38;
+            this.BoxForSourceListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.BoxForSourceListBox_DrawItem);
+            this.BoxForSourceListBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.BoxForSourceListBox_MeasureItem);
             // 
             // ClearSourceBtn
             // 
@@ -171,7 +174,7 @@ namespace WindowsFormsApp1
             this.ClearSourceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClearSourceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ClearSourceBtn.ForeColor = System.Drawing.Color.Black;
-            this.ClearSourceBtn.Location = new System.Drawing.Point(886, 293);
+            this.ClearSourceBtn.Location = new System.Drawing.Point(812, 293);
             this.ClearSourceBtn.Name = "ClearSourceBtn";
             this.ClearSourceBtn.Size = new System.Drawing.Size(51, 37);
             this.ClearSourceBtn.TabIndex = 37;
@@ -186,7 +189,7 @@ namespace WindowsFormsApp1
             this.AddCharacteristicsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddCharacteristicsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddCharacteristicsBtn.ForeColor = System.Drawing.Color.Black;
-            this.AddCharacteristicsBtn.Location = new System.Drawing.Point(886, 250);
+            this.AddCharacteristicsBtn.Location = new System.Drawing.Point(812, 250);
             this.AddCharacteristicsBtn.Name = "AddCharacteristicsBtn";
             this.AddCharacteristicsBtn.Size = new System.Drawing.Size(51, 37);
             this.AddCharacteristicsBtn.TabIndex = 36;
@@ -201,7 +204,7 @@ namespace WindowsFormsApp1
             this.SourceComboBox.Items.AddRange(new object[] {
             "Точечные",
             "Плоская волна"});
-            this.SourceComboBox.Location = new System.Drawing.Point(614, 268);
+            this.SourceComboBox.Location = new System.Drawing.Point(540, 268);
             this.SourceComboBox.Name = "SourceComboBox";
             this.SourceComboBox.Size = new System.Drawing.Size(249, 37);
             this.SourceComboBox.TabIndex = 35;
@@ -221,7 +224,7 @@ namespace WindowsFormsApp1
             this.ClearObjectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClearObjectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ClearObjectBtn.ForeColor = System.Drawing.Color.Black;
-            this.ClearObjectBtn.Location = new System.Drawing.Point(886, 182);
+            this.ClearObjectBtn.Location = new System.Drawing.Point(812, 182);
             this.ClearObjectBtn.Name = "ClearObjectBtn";
             this.ClearObjectBtn.Size = new System.Drawing.Size(51, 37);
             this.ClearObjectBtn.TabIndex = 33;
@@ -236,7 +239,7 @@ namespace WindowsFormsApp1
             this.ObjectComboBox.Items.AddRange(new object[] {
             "Прямоугольник",
             "Эллипс"});
-            this.ObjectComboBox.Location = new System.Drawing.Point(614, 166);
+            this.ObjectComboBox.Location = new System.Drawing.Point(540, 166);
             this.ObjectComboBox.Name = "ObjectComboBox";
             this.ObjectComboBox.Size = new System.Drawing.Size(249, 37);
             this.ObjectComboBox.TabIndex = 32;
@@ -248,7 +251,7 @@ namespace WindowsFormsApp1
             this.AddObjectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddObjectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddObjectBtn.ForeColor = System.Drawing.Color.Black;
-            this.AddObjectBtn.Location = new System.Drawing.Point(886, 139);
+            this.AddObjectBtn.Location = new System.Drawing.Point(812, 139);
             this.AddObjectBtn.Name = "AddObjectBtn";
             this.AddObjectBtn.Size = new System.Drawing.Size(51, 37);
             this.AddObjectBtn.TabIndex = 31;
@@ -258,13 +261,15 @@ namespace WindowsFormsApp1
             // 
             // BoxForObjectListBox
             // 
+            this.BoxForObjectListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.BoxForObjectListBox.FormattingEnabled = true;
-            this.BoxForObjectListBox.HorizontalScrollbar = true;
             this.BoxForObjectListBox.ItemHeight = 29;
-            this.BoxForObjectListBox.Location = new System.Drawing.Point(968, 139);
+            this.BoxForObjectListBox.Location = new System.Drawing.Point(894, 139);
             this.BoxForObjectListBox.Name = "BoxForObjectListBox";
-            this.BoxForObjectListBox.Size = new System.Drawing.Size(682, 91);
+            this.BoxForObjectListBox.Size = new System.Drawing.Size(766, 91);
             this.BoxForObjectListBox.TabIndex = 16;
+            this.BoxForObjectListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.BoxForObjectListBox_DrawItem);
+            this.BoxForObjectListBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.BoxForObjectListBox_MeasureItem);
             // 
             // label1
             // 
@@ -319,16 +324,16 @@ namespace WindowsFormsApp1
             // chart1
             // 
             this.chart1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea8.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chart1.Legends.Add(legend8);
             this.chart1.Location = new System.Drawing.Point(20, 522);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(1730, 473);
             this.chart1.TabIndex = 34;
             this.chart1.Text = "chart1";

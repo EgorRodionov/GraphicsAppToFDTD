@@ -38,6 +38,39 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
+        //настройка переноса строки в listbox
+        private void BoxForObjectListBox_MeasureItem(object sender, MeasureItemEventArgs e)
+        {
+            e.ItemHeight = (int)e.Graphics.MeasureString(BoxForObjectListBox.Items[e.Index].ToString(),
+                BoxForObjectListBox.Font, BoxForObjectListBox.Width).Height;
+        }
+        //настройка переноса строки в listbox
+        private void BoxForObjectListBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (BoxForObjectListBox.Items.Count > 0)
+            {
+                e.DrawBackground();
+                e.DrawFocusRectangle();
+                e.Graphics.DrawString(BoxForObjectListBox.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
+            }
+        }
+        //настройка переноса строки в listbox
+        private void BoxForSourceListBox_MeasureItem(object sender, MeasureItemEventArgs e)
+        {
+            e.ItemHeight = (int)e.Graphics.MeasureString(BoxForSourceListBox.Items[e.Index].ToString(),
+                BoxForSourceListBox.Font, BoxForSourceListBox.Width).Height;
+        }
+        //настройка переноса строки в listbox
+        private void BoxForSourceListBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (BoxForSourceListBox.Items.Count > 0)
+            {
+                e.DrawBackground();
+                e.DrawFocusRectangle();
+                e.Graphics.DrawString(BoxForSourceListBox.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
+            }
+        }
+
         private void AddObjectBtn_Click(object sender, EventArgs e)
         {
             if (ObjectComboBox.SelectedIndex > -1)
@@ -186,20 +219,20 @@ namespace WindowsFormsApp1
                                 // Устанавливаем преобразование координат для смещения начала координат вниз
                                 //graphics.TranslateTransform(0, dialogForm2.chart1.Height);
 
-                                    Random random = new Random();
-                                    Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+                                Random random = new Random();
+                                Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
 
-                                    // Заливка прямоугольника цветом
-                                    graphics.FillRectangle(new SolidBrush(color), (float)left, (float)bottom, (float)((Rectanglee)figure).Width,
-                                        (float)((Rectanglee)figure).Height);
+                                // Заливка прямоугольника цветом
+                                graphics.FillRectangle(new SolidBrush(color), (float)left, (float)bottom, (float)((Rectanglee)figure).Width,
+                                    (float)((Rectanglee)figure).Height);
 
-                                    // Рисование границы прямоугольника
-                                    graphics.DrawRectangle(Pens.Black, (float)left, (float)bottom, (float)((Rectanglee)figure).Width,
-                                        (float)((Rectanglee)figure).Height);
+                                // Рисование границы прямоугольника
+                                graphics.DrawRectangle(Pens.Black, (float)left, (float)bottom, (float)((Rectanglee)figure).Width,
+                                    (float)((Rectanglee)figure).Height);
 
-                                    // Отобразить графический объект на элементе управления Chart
-                                    chart1.CreateGraphics().DrawImage(bitmap, 0, 0);
-                                
+                                // Отобразить графический объект на элементе управления Chart
+                                chart1.CreateGraphics().DrawImage(bitmap, 0, 0);
+
                             }
                         }
                         else
@@ -207,22 +240,50 @@ namespace WindowsFormsApp1
                             // Создание объекта Graphics из Bitmap
                             using (Graphics graphics = Graphics.FromImage(bitmap))
                             {
-                                    Random random = new Random();
-                                    Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
-                                    // Заливка эллипса цветом
-                                    graphics.FillEllipse(new SolidBrush(color), (float)(((Ellipse)figure).x - ((Ellipse)figure).r1),
-                                        (float)(((Ellipse)figure).y - ((Ellipse)figure).r2), (float)(2 * ((Ellipse)figure).r1),
-                                        (float)(2 * ((Ellipse)figure).r2));
-                                    // Рисование границы эллипса
-                                    graphics.DrawEllipse(Pens.Black, (float)(((Ellipse)figure).x - ((Ellipse)figure).r1),
-                                        (float)(((Ellipse)figure).y - ((Ellipse)figure).r2), (float)(2 * ((Ellipse)figure).r1),
-                                        (float)(2 * ((Ellipse)figure).r2));
+                                Random random = new Random();
+                                Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+                                // Заливка эллипса цветом
+                                graphics.FillEllipse(new SolidBrush(color), (float)(((Ellipse)figure).x - ((Ellipse)figure).r1),
+                                    (float)(((Ellipse)figure).y - ((Ellipse)figure).r2), (float)(2 * ((Ellipse)figure).r1),
+                                    (float)(2 * ((Ellipse)figure).r2));
+                                // Рисование границы эллипса
+                                graphics.DrawEllipse(Pens.Black, (float)(((Ellipse)figure).x - ((Ellipse)figure).r1),
+                                    (float)(((Ellipse)figure).y - ((Ellipse)figure).r2), (float)(2 * ((Ellipse)figure).r1),
+                                    (float)(2 * ((Ellipse)figure).r2));
 
-                                    // Отобразить графический объект на элементе управления Chart
-                                    chart1.CreateGraphics().DrawImage(bitmap, 0, 0);
-                                
+                                // Отобразить графический объект на элементе управления Chart
+                                chart1.CreateGraphics().DrawImage(bitmap, 0, 0);
+
                             }
                         }
+
+                    }
+
+                    //выделение границы расчетной области цветной линией
+                    // Создание объекта Graphics из Bitmap
+                    using (Graphics graphics = Graphics.FromImage(bitmap))
+                    {
+                        // Получаем координаты вершин расчетной области
+                        int leftBound = 0;
+                        int topBound = 0;
+                        int rightBound = width - 1;
+                        int bottomBound = height - 1;
+
+                        // Задаем цвет и ширину для границы расчетной области
+                        Color borderColor = Color.Red; // Здесь можно выбрать желаемый цвет
+                        int borderWidth = 4; // Здесь можно выбрать желаемую ширину
+
+                        // Заливка границы расчетной области цветом
+                        graphics.FillRectangle(new SolidBrush(borderColor), leftBound, topBound, borderWidth, height); // Левая граница
+                        graphics.FillRectangle(new SolidBrush(borderColor), rightBound - borderWidth + 1, topBound, borderWidth, height); // Правая граница
+                        graphics.FillRectangle(new SolidBrush(borderColor), leftBound, topBound, width, borderWidth); // Верхняя граница
+                        graphics.FillRectangle(new SolidBrush(borderColor), leftBound, bottomBound - borderWidth + 1, width, borderWidth); // Нижняя граница
+
+                        // Если нужно, также можно нарисовать границу расчетной области
+                        //graphics.DrawRectangle(new Pen(borderColor, borderWidth), leftBound, topBound, width, height);
+
+                        // Вывести графический объект на элемент управления Chart
+                        chart1.CreateGraphics().DrawImage(bitmap, 0, 0);
 
                     }
                 }
@@ -253,5 +314,7 @@ namespace WindowsFormsApp1
                 graphics.DrawString(y.ToString(), Font, Brushes.Black, 5, y);
             }
         }
+
+        
     }
 }

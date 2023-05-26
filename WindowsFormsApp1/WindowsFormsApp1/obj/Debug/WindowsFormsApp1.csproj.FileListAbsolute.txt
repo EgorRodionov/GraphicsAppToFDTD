@@ -34,3 +34,5 @@ C:\Users\Пользователь\Desktop\Диплом\Графическое п
 C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.IzmenenieTaskForm.resources
 C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AddGroupForm.resources
 C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.IzmenenieGroupForm.resources
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.TaskForm.resources
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CreateTaskForm.resources

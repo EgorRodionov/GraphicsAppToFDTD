@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogForm1));
             this.StartExperimentBtn = new System.Windows.Forms.Button();
             this.DataBaseBtn = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@ namespace WindowsFormsApp1
             this.RoleLabel2 = new System.Windows.Forms.Label();
             this.loginPanel = new System.Windows.Forms.Panel();
             this.Loginlabel2 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.menuBtn)).BeginInit();
             this.panel2.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -99,6 +101,7 @@ namespace WindowsFormsApp1
             this.menuBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.menuBtn.TabIndex = 21;
             this.menuBtn.TabStop = false;
+            this.menuBtn.Click += new System.EventHandler(this.menuBtn_Click);
             // 
             // panel2
             // 
@@ -148,6 +151,14 @@ namespace WindowsFormsApp1
             this.Loginlabel2.TabIndex = 0;
             this.Loginlabel2.Text = "Логин";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
+            // 
             // DialogForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -183,5 +194,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label RoleLabel2;
         private System.Windows.Forms.Panel loginPanel;
         private System.Windows.Forms.Label Loginlabel2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
