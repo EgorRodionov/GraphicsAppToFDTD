@@ -12,8 +12,10 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private readonly CheckUser _user;
+        public Form1(CheckUser user)
         {
+            _user = user;
             InitializeComponent();
             this.BackColor = ColorTranslator.FromHtml("#1A2D37");
         }
@@ -21,6 +23,12 @@ namespace WindowsFormsApp1
         private void calculate_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            RoleLabel2.Text = $"{_user.Status()}";
+            Loginlabel2.Text = $"{_user.Login}";
         }
     }
 }

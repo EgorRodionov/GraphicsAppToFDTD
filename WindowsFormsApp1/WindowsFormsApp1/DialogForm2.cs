@@ -14,8 +14,10 @@ namespace WindowsFormsApp1
 {
     public partial class DialogForm2 : Form
     {
-        public DialogForm2()
+        private readonly CheckUser _user;
+        public DialogForm2(CheckUser user)
         {
+            _user = user;
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = ColorTranslator.FromHtml("#1A2D37");
@@ -26,7 +28,7 @@ namespace WindowsFormsApp1
 
         private void OpenForm3Btn_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Form1 form1 = new Form1(_user);
             form1.ShowDialog();
         }
 
@@ -166,6 +168,7 @@ namespace WindowsFormsApp1
                 BoxForObjectListBox.SelectedIndex = selectedIndex + 1;
             }
         }
+
         private void ShowFigureBtn_Click(object sender, EventArgs e)
         {
             //if (BoxForObjectListBox.Items.Count != 0)
@@ -191,7 +194,7 @@ namespace WindowsFormsApp1
             //else
             //    MessageBox.Show("Нужно добавить объекты!");
 
-
+            
 
             try
             {
@@ -200,11 +203,10 @@ namespace WindowsFormsApp1
                 // Создание объекта Bitmap для рисования графика
                 Bitmap bitmap = new Bitmap(width, height);
 
-                if (BoxForObjectListBox.Items.Count != 0)
+                if (BoxForObjectListBox.Items.Count != 0 && BoxForSourceListBox.Items.Count != 0)
                 {
                     foreach (Figure figure in Figures)
                     {
-
                         if (figure is WindowsFormsApp1.Rectanglee rectangle) //проверка типа каждого элемента списка 
                         {
                             // Создание объекта Graphics из Bitmap
@@ -215,9 +217,6 @@ namespace WindowsFormsApp1
                                 double top = ((Rectanglee)figure).BottomLeftPoint.Y;
                                 double right = ((Rectanglee)figure).BottomLeftPoint.X + ((Rectanglee)figure).Width;
                                 double bottom = ((Rectanglee)figure).BottomLeftPoint.Y - ((Rectanglee)figure).Height;
-
-                                // Устанавливаем преобразование координат для смещения начала координат вниз
-                                //graphics.TranslateTransform(0, dialogForm2.chart1.Height);
 
                                 Random random = new Random();
                                 Color color = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
@@ -270,7 +269,7 @@ namespace WindowsFormsApp1
                         int bottomBound = height - 1;
 
                         // Задаем цвет и ширину для границы расчетной области
-                        Color borderColor = Color.Red; // Здесь можно выбрать желаемый цвет
+                        Color borderColor = Color.Black; // Здесь можно выбрать желаемый цвет
                         int borderWidth = 4; // Здесь можно выбрать желаемую ширину
 
                         // Заливка границы расчетной области цветом
@@ -286,9 +285,34 @@ namespace WindowsFormsApp1
                         chart1.CreateGraphics().DrawImage(bitmap, 0, 0);
 
                     }
+                    // Отображение звезды на графике с использованием полученных координат
+                    // Получение координат из формы с характеристиками для источника
+                    double xCoordinate = CharacteristicForSourceForm.XCoordinate;
+                    double yCoordinate = CharacteristicForSourceForm.YCoordinate;
+
+                    // Создание объекта Graphics из Bitmap
+                    Bitmap bitmap2 = new Bitmap(chart1.Width, chart1.Height);
+                    using (Graphics graphics = Graphics.FromImage(bitmap2))
+                    {
+                        // Отображение символа '*' на графике
+                        float starSize = 30; // Размер символа
+                        float starX = (float)xCoordinate - starSize / 2; // Координата x символа
+                        float starY = (float)yCoordinate - starSize / 2; // Координата y символа
+
+                        // Создание шрифта для символа
+                        Font starFont = new Font("Arial", starSize, FontStyle.Regular);
+
+                        // Отображение символа '*' на графике
+                        graphics.DrawString("*", starFont, Brushes.Red, new PointF(starX, starY));
+
+                        // Отобразить графический объект на элементе управления Chart
+                        chart1.CreateGraphics().DrawImage(bitmap2, 0, 0);
+                    }
                 }
-                else
+                else if(BoxForObjectListBox.Items.Count == 0)
                     MessageBox.Show("Нужно добавить объекты!");
+                else
+                    MessageBox.Show("Нужно добавить точечный источник!");
             }
             catch
             {

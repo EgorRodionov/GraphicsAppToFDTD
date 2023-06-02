@@ -29,9 +29,9 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.BtnDown = new System.Windows.Forms.Button();
             this.BtnUp = new System.Windows.Forms.Button();
@@ -202,8 +202,7 @@ namespace WindowsFormsApp1
             this.SourceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SourceComboBox.FormattingEnabled = true;
             this.SourceComboBox.Items.AddRange(new object[] {
-            "Точечные",
-            "Плоская волна"});
+            "Точечные"});
             this.SourceComboBox.Location = new System.Drawing.Point(540, 268);
             this.SourceComboBox.Name = "SourceComboBox";
             this.SourceComboBox.Size = new System.Drawing.Size(249, 37);
@@ -213,9 +212,9 @@ namespace WindowsFormsApp1
             // 
             this.label4.Location = new System.Drawing.Point(29, 251);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(520, 63);
+            this.label4.Size = new System.Drawing.Size(483, 63);
             this.label4.TabIndex = 34;
-            this.label4.Text = "Добавьте источники плоской волны с разных сторон расчётной области (до 4-х):";
+            this.label4.Text = "Добавьте точечный источник с разных сторон расчётной области:";
             // 
             // ClearObjectBtn
             // 
@@ -324,16 +323,16 @@ namespace WindowsFormsApp1
             // chart1
             // 
             this.chart1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            chartArea8.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chart1.Legends.Add(legend8);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(20, 522);
             this.chart1.Name = "chart1";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chart1.Series.Add(series8);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(1730, 473);
             this.chart1.TabIndex = 34;
             this.chart1.Text = "chart1";

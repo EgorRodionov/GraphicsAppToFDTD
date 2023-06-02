@@ -175,6 +175,7 @@ namespace WindowsFormsApp1
             this.Text = "ВЛП";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DialogForm1_FormClosed);
+            this.Load += new System.EventHandler(this.DialogForm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.menuBtn)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

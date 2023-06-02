@@ -86,7 +86,7 @@ namespace WindowsFormsApp1
 
             //}
 
-            DialogForm2 dialogForm2 = this.Owner as DialogForm2;
+
 
             //// Вычисляем координаты вершин прямоугольника
             //double left = rectanglee.BottomLeftPoint.X;
@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
             //// Освобождаем ресурсы
             //graphics.Dispose();
 
-
+            DialogForm2 dialogForm2 = this.Owner as DialogForm2;
 
             int width = int.Parse(dialogForm2.WidthtextBox.Text);
             int height = int.Parse(dialogForm2.HeightTextBox.Text);

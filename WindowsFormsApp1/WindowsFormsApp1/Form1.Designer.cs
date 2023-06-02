@@ -315,7 +315,7 @@ namespace WindowsFormsApp1
             this.groupBox2.Size = new System.Drawing.Size(960, 686);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "График";
+            this.groupBox2.Text = "Результат эксперимента";
             // 
             // chart4
             // 
@@ -491,6 +491,7 @@ namespace WindowsFormsApp1
             this.Name = "Form1";
             this.Text = "Эксперимент";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox3.ResumeLayout(false);

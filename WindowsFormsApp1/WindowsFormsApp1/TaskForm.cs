@@ -25,7 +25,6 @@ namespace WindowsFormsApp1
         //метод, который разрешает доступ к функциям для преподавателя
         private void IsTeacher()
         {
-            UpdateBtn.Visible = _user.IsTeacher;
             CreateTaskBtn.Visible = _user.IsTeacher;
             OpenTaskBtn.Visible = _user.IsTeacher;
             CloseTaskBtn.Visible = _user.IsTeacher;
@@ -41,6 +40,7 @@ namespace WindowsFormsApp1
             TaskDataGridView.Columns.Add("Title_Task", "Название задачи");
             TaskDataGridView.Columns.Add("Content", "Содержание");
             TaskDataGridView.Columns.Add("Accessibility", "Доступность");
+            TaskDataGridView.Columns["Accessibility"].Visible = false;
         }
 
         public void RefreshDataGrid(DataGridView dgv) //метод для заполнения DataGridView

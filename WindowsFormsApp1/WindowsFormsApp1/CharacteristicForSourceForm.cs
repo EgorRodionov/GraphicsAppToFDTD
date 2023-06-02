@@ -20,6 +20,10 @@ namespace WindowsFormsApp1
             _selectValue = selectValue;
         }
 
+        public static double XCoordinate { get; private set; }
+        public static double YCoordinate { get; private set; }
+        
+
         private void CharacteristicForSourceForm_Load(object sender, EventArgs e)
         {
             label1.Text = "Характеристика для " + _selectValue;
@@ -33,6 +37,9 @@ namespace WindowsFormsApp1
             double periodicity = double.Parse(PeriodicityTextBox.Text);
             double CoordinateX = double.Parse(CoordinateXtextBox.Text);
             double CoordinateY = double.Parse(CoordinateYtextBox.Text);
+
+            XCoordinate = double.Parse(CoordinateXtextBox.Text);
+            YCoordinate = double.Parse(CoordinateYtextBox.Text);
 
             if (dialogForm2 != null)
                 dialogForm2.BoxForSourceListBox.Items.Add(string.Format("{0}: Амплитуда: {1}, Частота: {2}, " +

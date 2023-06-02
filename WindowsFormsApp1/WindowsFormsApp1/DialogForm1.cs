@@ -21,9 +21,22 @@ namespace WindowsFormsApp1
             this.BackColor = ColorTranslator.FromHtml("#1A2D37");
         }
 
+        private void IsAdmin()
+        {
+            DataBaseBtn.Visible = _user.IsAdmin;
+            RegistrBtn.Visible = _user.IsAdmin;
+        }
+
+        private void DialogForm1_Load(object sender, EventArgs e)
+        {
+            RoleLabel2.Text = $"{_user.Status()}";
+            Loginlabel2.Text = $"{_user.Login}";
+            IsAdmin();
+        }
+
         private void StartExperimentBtn_Click(object sender, EventArgs e)
         {
-            DialogForm2 dialogForm2 = new DialogForm2();
+            DialogForm2 dialogForm2 = new DialogForm2(_user);
             //this.Hide();
             dialogForm2.ShowDialog();
             //this.Close();
@@ -72,5 +85,6 @@ namespace WindowsFormsApp1
                 if (MessageBox.Show("Выйти?", "Внимание!", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 this.Close();
         }
+
     }
 }

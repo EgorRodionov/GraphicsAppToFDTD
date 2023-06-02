@@ -29,8 +29,9 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SearchTeacherTextBox2 = new System.Windows.Forms.TextBox();
             this.UpdateTeacher = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -182,8 +183,8 @@ namespace WindowsFormsApp1
             // TeacherDataGridView
             // 
             this.TeacherDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TeacherDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TeacherDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.TeacherDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -234,8 +235,8 @@ namespace WindowsFormsApp1
             // TaskDataGridView
             // 
             this.TaskDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TaskDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TaskDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.TaskDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -246,6 +247,8 @@ namespace WindowsFormsApp1
             this.TaskDataGridView.Name = "TaskDataGridView";
             this.TaskDataGridView.ReadOnly = true;
             this.TaskDataGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TaskDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.TaskDataGridView.RowTemplate.Height = 24;
             this.TaskDataGridView.Size = new System.Drawing.Size(1700, 2058);
             this.TaskDataGridView.TabIndex = 7;
@@ -611,7 +614,7 @@ namespace WindowsFormsApp1
             this.ConSotrudnikDGV.Name = "ConSotrudnikDGV";
             this.ConSotrudnikDGV.RowHeadersWidth = 51;
             this.ConSotrudnikDGV.RowTemplate.Height = 24;
-            this.ConSotrudnikDGV.Size = new System.Drawing.Size(2848, 1853);
+            this.ConSotrudnikDGV.Size = new System.Drawing.Size(2848, 1866);
             this.ConSotrudnikDGV.TabIndex = 14;
             // 
             // btnUpdate
