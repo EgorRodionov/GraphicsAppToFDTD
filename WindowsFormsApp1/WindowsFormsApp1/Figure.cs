@@ -14,10 +14,12 @@ namespace WindowsFormsApp1
         public double Epsilon { get; set; }
         public double Sigma { get; set; }
 
-        public Figure(double x, double y)
+        public Figure(double x, double y, double epsilon, double sigma)
         {
             this.x = x;
             this.y = y;
+            this.Epsilon = epsilon;
+            this.Sigma = sigma;
         }
 
         public abstract bool IsPointFigure(Point point);

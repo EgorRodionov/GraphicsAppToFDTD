@@ -54,16 +54,16 @@ namespace WindowsFormsApp1
             this.panel2 = new System.Windows.Forms.Panel();
             this.RoleLabel2 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.TextBoxHm = new System.Windows.Forms.TextBox();
+            this.NumberOfPmlLayersTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.HeightTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.WidthtextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.SimulationTimeTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.SpatialGridStepTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.loginPanel = new System.Windows.Forms.Panel();
             this.Loginlabel2 = new System.Windows.Forms.Label();
@@ -170,27 +170,27 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 3;
             this.label2.Text = "Количество слоев PML:";
             // 
-            // TextBoxHm
+            // NumberOfPmlLayersTextBox
             // 
-            this.TextBoxHm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxHm.Location = new System.Drawing.Point(649, 241);
-            this.TextBoxHm.Name = "TextBoxHm";
-            this.TextBoxHm.Size = new System.Drawing.Size(249, 30);
-            this.TextBoxHm.TabIndex = 2;
+            this.NumberOfPmlLayersTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NumberOfPmlLayersTextBox.Location = new System.Drawing.Point(649, 241);
+            this.NumberOfPmlLayersTextBox.Name = "NumberOfPmlLayersTextBox";
+            this.NumberOfPmlLayersTextBox.Size = new System.Drawing.Size(249, 30);
+            this.NumberOfPmlLayersTextBox.TabIndex = 2;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.HeightTextBox);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.WidthtextBox);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.SimulationTimeTextBox);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.SpatialGridStepTextBox);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.TextBoxHm);
+            this.groupBox3.Controls.Add(this.NumberOfPmlLayersTextBox);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(17, 141);
@@ -209,13 +209,14 @@ namespace WindowsFormsApp1
             this.label5.TabIndex = 46;
             this.label5.Text = "Высота";
             // 
-            // textBox1
+            // HeightTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(702, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 30);
-            this.textBox1.TabIndex = 45;
+            this.HeightTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HeightTextBox.Location = new System.Drawing.Point(702, 101);
+            this.HeightTextBox.Name = "HeightTextBox";
+            this.HeightTextBox.ReadOnly = true;
+            this.HeightTextBox.Size = new System.Drawing.Size(196, 30);
+            this.HeightTextBox.TabIndex = 45;
             // 
             // label3
             // 
@@ -231,6 +232,7 @@ namespace WindowsFormsApp1
             this.WidthtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WidthtextBox.Location = new System.Drawing.Point(702, 54);
             this.WidthtextBox.Name = "WidthtextBox";
+            this.WidthtextBox.ReadOnly = true;
             this.WidthtextBox.Size = new System.Drawing.Size(196, 30);
             this.WidthtextBox.TabIndex = 43;
             // 
@@ -243,13 +245,13 @@ namespace WindowsFormsApp1
             this.label9.TabIndex = 19;
             this.label9.Text = "Время моделирования:";
             // 
-            // textBox4
+            // SimulationTimeTextBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(649, 301);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(249, 30);
-            this.textBox4.TabIndex = 18;
+            this.SimulationTimeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SimulationTimeTextBox.Location = new System.Drawing.Point(649, 301);
+            this.SimulationTimeTextBox.Name = "SimulationTimeTextBox";
+            this.SimulationTimeTextBox.Size = new System.Drawing.Size(249, 30);
+            this.SimulationTimeTextBox.TabIndex = 18;
             // 
             // label7
             // 
@@ -260,13 +262,13 @@ namespace WindowsFormsApp1
             this.label7.TabIndex = 15;
             this.label7.Text = "шаг пространственной сетки:";
             // 
-            // textBox2
+            // SpatialGridStepTextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(649, 180);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(249, 30);
-            this.textBox2.TabIndex = 14;
+            this.SpatialGridStepTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SpatialGridStepTextBox.Location = new System.Drawing.Point(649, 180);
+            this.SpatialGridStepTextBox.Name = "SpatialGridStepTextBox";
+            this.SpatialGridStepTextBox.Size = new System.Drawing.Size(249, 30);
+            this.SpatialGridStepTextBox.TabIndex = 14;
             // 
             // label6
             // 
@@ -519,16 +521,16 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label RoleLabel2;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox TextBoxHm;
+        public System.Windows.Forms.TextBox NumberOfPmlLayersTextBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel loginPanel;
         private System.Windows.Forms.Label Loginlabel2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox SimulationTimeTextBox;
         private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox SpatialGridStepTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.CheckBox checkBox4;
@@ -539,7 +541,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox HeightTextBox;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox WidthtextBox;
     }
