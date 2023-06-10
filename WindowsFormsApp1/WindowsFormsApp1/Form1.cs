@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WindowsFormsApp1
 {
@@ -33,7 +34,7 @@ namespace WindowsFormsApp1
 
         private void calculate_Click(object sender, EventArgs e)
         {
-            
+            FD2D_3_2();
         }
 
         //Метод с основным вычислением
@@ -74,6 +75,7 @@ namespace WindowsFormsApp1
             dt = ddx / 6e8f; //шаг по времени
             epsz = 8.8e-12f;
             pi = 3.14159f;
+
 
             //Инициализируем массивы
 
@@ -170,6 +172,39 @@ namespace WindowsFormsApp1
 
                         }
             */
+            DialogForm2 dialogForm2 = this.Owner as DialogForm2;
+
+            Point pt;
+
+            int x, y;
+            int ia, ib, ja, jb;
+
+            ic = IE / 2;
+            jc = JE / 2;
+            ia = 7; /* Total/scattered field boundaries */
+            ib = IE - ia - 1;
+            ja = 7;
+            jb = JE - ja - 1;
+
+            foreach (Figure fig in dialogForm2.Figures)
+            {
+                for (j = ja; j < jb; j++)
+                {
+                    for (i = ia; i < ib; i++)
+                    {
+                        x = i * (int)ddx;
+                        y = j * (int)ddx;
+                        pt = new Point(x, y);
+
+                        if (fig.IsPointInFigure(pt) == true)
+                        {
+                            ga[i, j] = 1.0f / (float)(fig.Epsilon + (fig.Sigma * dt / epsz));
+                            gb[i, j] = (float)fig.Sigma * dt / epsz;
+                        }
+                    }
+                }
+            }
+
             t0 = 40.0f;
             spread = 12.0f;
             T = 0;
@@ -199,6 +234,7 @@ namespace WindowsFormsApp1
                     //Синусоидальный источник
                     pulse = (float)Math.Exp(-.5f * Math.Pow((T - t0) / spread, 2.0));
                     dz[ic, jc] = pulse;
+
                     //Вычисление поля Ez
                     //Оставьте ребра Ez равными 0, как часть PML
                     for (j = 1; j < JE - 1; j++)
@@ -210,6 +246,11 @@ namespace WindowsFormsApp1
                     }
                     //Console.WriteLine("\n ", T, ez[ic, jc]);
                     //Вычисление поля Hx
+                    chart1.Series.Clear();
+                    Series series = new Series("Curl_e_Data");
+                    chart1.Series.Add(series);
+                    series.ChartType = SeriesChartType.Line;
+
                     for (j = 0; j < JE - 1; j++)
                     {
                         for (i = 0; i < IE; i++)
@@ -218,8 +259,15 @@ namespace WindowsFormsApp1
                             ihx[i, j] = ihx[i, j] + fi1[i] * curl_e;
                             hx[i, j] = fj3[j] * hx[i, j]
                             + fj2[j] * .5f * (curl_e + ihx[i, j]);
+
+                            // Добавьте значение curl_e в серию данных графика
+                            series.Points.Add(curl_e);
                         }
                     }
+                    chart2.Series.Clear();
+                    Series series2 = new Series("Hy");
+                    chart2.Series.Add(series2);
+                    series.ChartType = SeriesChartType.Line;
                     // Вычисление поля Hy
                     for (j = 0; j < JE - 1; j++)
                     {
@@ -229,41 +277,28 @@ namespace WindowsFormsApp1
                             ihy[i, j] = ihy[i, j] + fj1[j] * curl_e;
                             hy[i, j] = fi3[i] * hy[i, j]
                             + fi2[i] * .5f * (curl_e + ihy[i, j]);
+
+                            series2.Points.Add(curl_e);
                         }
                     }
 
                     // Конец основного цикла FDTD
                 }
+                chart3.Series.Clear();
+                Series series3 = new Series("Ez");
+                chart3.Series.Add(series3);
+                series3.ChartType = SeriesChartType.Line;
                 for (j = 1; j < JE; j++)
                 {
                     Console.Write(j);
                     for (i = 1; i < IE; i++)
                     {
-                        Console.Write(ez[i, j]);
+                        //Console.Write(ez[i, j]);
+                        series3.Points.Add(ez[i, j]);
                     }
-                    Console.WriteLine();
+                    //Console.WriteLine();
                 }
-                //Write the E field out to a file "Ez"
-                string path = "fd2d_3_2.txt";
-                try
-                {
-                    StreamWriter sw = new StreamWriter(path);
-                    for (j = 0; j < JE; j++)
-                    {
-                        for (i = 0; i < IE; i++)
-                        {
-                            sw.Write(ez[i, j]);
-                            sw.Write(" ");
-                        }
-                        sw.WriteLine();
-                    }
-                    sw.Close();
-                    Console.WriteLine("T = \n ", T);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Exception: " + ex.Message);
-                }
+               
             }
         }
     }

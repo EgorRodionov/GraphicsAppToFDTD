@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
             this.SigmaEllips = sigma;
         }
 
-        public override bool IsPointFigure(Point point)
+        public override bool IsPointInFigure(Point point)
         {
             //расчет попадания координаты внутрь или на границу эллипса
             // Нормализуем координаты точки

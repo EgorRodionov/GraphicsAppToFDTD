@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
             BottomLeftPoint = new Point((int)left, (int)bottom);
         }
 
-        public override bool IsPointFigure(Point point)
+        public override bool IsPointInFigure(Point point)
         {
             //расчет попадания координаты внутрь или на границу прямоугольника
             double xMin = x; //минимальные значения координат x

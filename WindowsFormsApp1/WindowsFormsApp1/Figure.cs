@@ -22,6 +22,6 @@ namespace WindowsFormsApp1
             this.Sigma = sigma;
         }
 
-        public abstract bool IsPointFigure(Point point);
+        public abstract bool IsPointInFigure(Point point);
     }
 }

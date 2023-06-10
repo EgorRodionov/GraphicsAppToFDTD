@@ -202,7 +202,7 @@ namespace WindowsFormsApp1
             this.SourceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SourceComboBox.FormattingEnabled = true;
             this.SourceComboBox.Items.AddRange(new object[] {
-            "Точечные"});
+            "Точечный"});
             this.SourceComboBox.Location = new System.Drawing.Point(540, 268);
             this.SourceComboBox.Name = "SourceComboBox";
             this.SourceComboBox.Size = new System.Drawing.Size(249, 37);
