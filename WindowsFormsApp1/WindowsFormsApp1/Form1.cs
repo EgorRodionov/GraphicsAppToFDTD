@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
             float[,] iz = new float[IE, JE];
             float[,] hx = new float[IE, JE];
             float[,] hy = new float[IE, JE];
-            int l, n, i, j, ic, jc, nsteps, npml, m;
+            int l, n, i, j, ic, jc, nsteps, npml, m, dist;
             float ddx, dt, T, epsz, pi, epsilon, sigma, eaf;
             float xn, xxn, xnum, xd, curl_e;
             float t0, spread, pulse;
@@ -121,7 +121,6 @@ namespace WindowsFormsApp1
                 xd = npml;
                 xxn = xnum / xd;
                 xn = 0.25f * (float)Math.Pow(xxn, 3.0);
-                //Console.WriteLine("\n", i, xxn, xn);
                 gi2[i] = 1.0f / (1.0f + xn);
                 gi2[IE - 1 - i] = 1.0f / (1.0f + xn);
                 gi3[i] = (1.0f - xn) / (1.0f + xn);
@@ -142,7 +141,6 @@ namespace WindowsFormsApp1
                 xd = npml;
                 xxn = xnum / xd;
                 xn = 0.25f * (float)Math.Pow(xxn, 3.0);
-                //Console.WriteLine("\n", i, xxn, xn);
                 gj2[j] = 1.0f / (1.0f + xn);
                 gj2[JE - 1 - j] = 1.0f / (1.0f + xn);
                 gj3[j] = (1.0f - xn) / (1.0f + xn);
@@ -156,22 +154,7 @@ namespace WindowsFormsApp1
                 fj3[j] = (1.0f - xn) / (1.0f + xn);
                 fj3[JE - 2 - j] = (1.0f - xn) / (1.0f + xn);
             }
-            /*
-                        Console.WriteLine("gi + fi \n");
-                        for (i = 0; i < IE; i++)
-                        {
-                            Console.WriteLine("\n", i, gi2[i], gi3[i]);
-                            Console.WriteLine("\n ", fi1[i], fi2[i], fi3[i]);
-                        }
 
-                        Console.WriteLine("gj + fj \n");
-                        for (j = 0; j < JE; j++)
-                        {
-                            Console.WriteLine("\n", j, gj2[j], gj3[j]);
-                            Console.WriteLine("\n ", fj1[j], fj2[j], fj3[j]);
-
-                        }
-            */
             DialogForm2 dialogForm2 = this.Owner as DialogForm2;
 
             Point pt;
@@ -181,7 +164,7 @@ namespace WindowsFormsApp1
 
             ic = IE / 2;
             jc = JE / 2;
-            ia = 7; /* Total/scattered field boundaries */
+            ia = 7; /* Общие/рассеянные границы полей */
             ib = IE - ia - 1;
             ja = 7;
             jb = JE - ja - 1;
@@ -194,6 +177,7 @@ namespace WindowsFormsApp1
                     {
                         x = i * (int)ddx;
                         y = j * (int)ddx;
+
                         pt = new Point(x, y);
 
                         if (fig.IsPointInFigure(pt) == true)
@@ -205,7 +189,7 @@ namespace WindowsFormsApp1
                 }
             }
 
-            t0 = 40.0f;
+            t0 = float.Parse(SimulationTimeTextBox.Text); //время моделирования
             spread = 12.0f;
             T = 0;
             nsteps = 1;
@@ -214,7 +198,6 @@ namespace WindowsFormsApp1
             {
                 Console.WriteLine("nsteps --> ");
                 nsteps = int.Parse(SpatialGridStepTextBox.Text);
-                //Console.WriteLine("\n", nsteps);
                 for (n = 1; n <= nsteps; n++)
                 {
                     T += 1;
@@ -245,9 +228,10 @@ namespace WindowsFormsApp1
                         }
                     }
                     //Console.WriteLine("\n ", T, ez[ic, jc]);
+
                     //Вычисление поля Hx
                     chart1.Series.Clear();
-                    Series series = new Series("Curl_e_Data");
+                    Series series = new Series("Hx");
                     chart1.Series.Add(series);
                     series.ChartType = SeriesChartType.Line;
 
@@ -262,6 +246,8 @@ namespace WindowsFormsApp1
 
                             // Добавьте значение curl_e в серию данных графика
                             series.Points.Add(curl_e);
+                            if (HxCheckBox.Checked == false)
+                                chart1.Series.Clear();
                         }
                     }
                     chart2.Series.Clear();
@@ -279,11 +265,55 @@ namespace WindowsFormsApp1
                             + fi2[i] * .5f * (curl_e + ihy[i, j]);
 
                             series2.Points.Add(curl_e);
+                            if (HyCheckBox.Checked == false)
+                                chart2.Series.Clear();
                         }
                     }
 
                     // Конец основного цикла FDTD
                 }
+
+                ////Вычисление поля Hx
+                //chart1.Series.Clear();
+                //Series series = new Series("Hx");
+                //chart1.Series.Add(series);
+                //series.ChartType = SeriesChartType.Line;
+
+                //for (j = 0; j < JE - 1; j++)
+                //{
+                //    for (i = 0; i < IE; i++)
+                //    {
+                //        curl_e = ez[i, j] - ez[i, j + 1];
+                //        ihx[i, j] = ihx[i, j] + fi1[i] * curl_e;
+                //        hx[i, j] = fj3[j] * hx[i, j]
+                //        + fj2[j] * .5f * (curl_e + ihx[i, j]);
+
+                //        // Добавьте значение curl_e в серию данных графика
+                //        series.Points.Add(curl_e);
+                //        if (HxCheckBox.Checked == false)
+                //            chart1.Series.Clear();
+                //    }
+                //}
+                //chart2.Series.Clear();
+                //Series series2 = new Series("Hy");
+                //chart2.Series.Add(series2);
+                //series.ChartType = SeriesChartType.Line;
+                //// Вычисление поля Hy
+                //for (j = 0; j < JE - 1; j++)
+                //{
+                //    for (i = 0; i < IE - 1; i++)
+                //    {
+                //        curl_e = ez[i + 1, j] - ez[i, j];
+                //        ihy[i, j] = ihy[i, j] + fj1[j] * curl_e;
+                //        hy[i, j] = fi3[i] * hy[i, j]
+                //        + fi2[i] * .5f * (curl_e + ihy[i, j]);
+
+                //        series2.Points.Add(curl_e);
+                //        if (HyCheckBox.Checked == false)
+                //            chart2.Series.Clear();
+                //    }
+                //}
+
                 chart3.Series.Clear();
                 Series series3 = new Series("Ez");
                 chart3.Series.Add(series3);
@@ -293,13 +323,21 @@ namespace WindowsFormsApp1
                     Console.Write(j);
                     for (i = 1; i < IE; i++)
                     {
-                        //Console.Write(ez[i, j]);
                         series3.Points.Add(ez[i, j]);
+                        if (EzCheckBox.Checked == false)
+                            chart3.Series.Clear();
                     }
-                    //Console.WriteLine();
                 }
-               
+                nsteps = 0;
             }
+        }
+
+        private void reset_Click(object sender, EventArgs e)
+        {
+            SpatialGridStepTextBox.Text = "";
+            NumberOfPmlLayersTextBox.Text = "";
+            SimulationTimeTextBox.Text = "";
+            
         }
     }
 }

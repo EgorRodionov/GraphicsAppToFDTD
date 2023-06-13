@@ -30,22 +30,18 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.reset = new System.Windows.Forms.Button();
             this.calculate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -67,20 +63,17 @@ namespace WindowsFormsApp1
             this.loginPanel = new System.Windows.Forms.Panel();
             this.Loginlabel2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.EzCheckBox = new System.Windows.Forms.CheckBox();
+            this.HyCheckBox = new System.Windows.Forms.CheckBox();
+            this.HxCheckBox = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.loginPanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -90,17 +83,18 @@ namespace WindowsFormsApp1
             // reset
             // 
             this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reset.Location = new System.Drawing.Point(728, 713);
+            this.reset.Location = new System.Drawing.Point(418, 717);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(200, 50);
             this.reset.TabIndex = 31;
             this.reset.Text = "Сброс";
             this.reset.UseVisualStyleBackColor = true;
+            this.reset.Click += new System.EventHandler(this.reset_Click);
             // 
             // calculate
             // 
             this.calculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.calculate.Location = new System.Drawing.Point(728, 657);
+            this.calculate.Location = new System.Drawing.Point(418, 661);
             this.calculate.Name = "calculate";
             this.calculate.Size = new System.Drawing.Size(200, 50);
             this.calculate.TabIndex = 29;
@@ -153,7 +147,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 244);
+            this.label2.Location = new System.Drawing.Point(82, 241);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(287, 29);
             this.label2.TabIndex = 3;
@@ -162,7 +156,7 @@ namespace WindowsFormsApp1
             // NumberOfPmlLayersTextBox
             // 
             this.NumberOfPmlLayersTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NumberOfPmlLayersTextBox.Location = new System.Drawing.Point(649, 241);
+            this.NumberOfPmlLayersTextBox.Location = new System.Drawing.Point(479, 241);
             this.NumberOfPmlLayersTextBox.Name = "NumberOfPmlLayersTextBox";
             this.NumberOfPmlLayersTextBox.Size = new System.Drawing.Size(249, 30);
             this.NumberOfPmlLayersTextBox.TabIndex = 2;
@@ -184,7 +178,7 @@ namespace WindowsFormsApp1
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(17, 141);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(935, 376);
+            this.groupBox3.Size = new System.Drawing.Size(742, 376);
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Параметры";
@@ -192,7 +186,7 @@ namespace WindowsFormsApp1
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(597, 104);
+            this.label5.Location = new System.Drawing.Point(427, 104);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 29);
             this.label5.TabIndex = 46;
@@ -201,7 +195,7 @@ namespace WindowsFormsApp1
             // HeightTextBox
             // 
             this.HeightTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HeightTextBox.Location = new System.Drawing.Point(702, 101);
+            this.HeightTextBox.Location = new System.Drawing.Point(532, 101);
             this.HeightTextBox.Name = "HeightTextBox";
             this.HeightTextBox.ReadOnly = true;
             this.HeightTextBox.Size = new System.Drawing.Size(196, 30);
@@ -210,7 +204,7 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(589, 57);
+            this.label3.Location = new System.Drawing.Point(419, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 29);
             this.label3.TabIndex = 44;
@@ -219,7 +213,7 @@ namespace WindowsFormsApp1
             // WidthtextBox
             // 
             this.WidthtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.WidthtextBox.Location = new System.Drawing.Point(702, 54);
+            this.WidthtextBox.Location = new System.Drawing.Point(532, 54);
             this.WidthtextBox.Name = "WidthtextBox";
             this.WidthtextBox.ReadOnly = true;
             this.WidthtextBox.Size = new System.Drawing.Size(196, 30);
@@ -228,7 +222,7 @@ namespace WindowsFormsApp1
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(10, 304);
+            this.label9.Location = new System.Drawing.Point(80, 301);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(289, 29);
             this.label9.TabIndex = 19;
@@ -237,7 +231,7 @@ namespace WindowsFormsApp1
             // SimulationTimeTextBox
             // 
             this.SimulationTimeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SimulationTimeTextBox.Location = new System.Drawing.Point(649, 301);
+            this.SimulationTimeTextBox.Location = new System.Drawing.Point(479, 301);
             this.SimulationTimeTextBox.Name = "SimulationTimeTextBox";
             this.SimulationTimeTextBox.Size = new System.Drawing.Size(249, 30);
             this.SimulationTimeTextBox.TabIndex = 18;
@@ -254,17 +248,16 @@ namespace WindowsFormsApp1
             // SpatialGridStepTextBox
             // 
             this.SpatialGridStepTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SpatialGridStepTextBox.Location = new System.Drawing.Point(649, 180);
+            this.SpatialGridStepTextBox.Location = new System.Drawing.Point(479, 180);
             this.SpatialGridStepTextBox.Name = "SpatialGridStepTextBox";
             this.SpatialGridStepTextBox.Size = new System.Drawing.Size(249, 30);
             this.SpatialGridStepTextBox.TabIndex = 14;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(10, 73);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(534, 29);
+            this.label6.Size = new System.Drawing.Size(375, 60);
             this.label6.TabIndex = 13;
             this.label6.Text = "Размеры расчётной области в микрометрах:";
             // 
@@ -295,173 +288,136 @@ namespace WindowsFormsApp1
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.chart4);
             this.groupBox2.Controls.Add(this.chart3);
             this.groupBox2.Controls.Add(this.chart2);
             this.groupBox2.Controls.Add(this.chart1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(958, 214);
+            this.groupBox2.Location = new System.Drawing.Point(780, 155);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(960, 686);
+            this.groupBox2.Size = new System.Drawing.Size(1132, 791);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Результат эксперимента";
             // 
-            // chart4
-            // 
-            chartArea5.Name = "ChartArea1";
-            this.chart4.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            legend5.Title = "Цвета графиков";
-            legend5.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line;
-            this.chart4.Legends.Add(legend5);
-            this.chart4.Location = new System.Drawing.Point(487, 360);
-            this.chart4.Name = "chart4";
-            series5.BorderWidth = 3;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Color = System.Drawing.Color.Red;
-            series5.Legend = "Legend1";
-            series5.LegendText = "-";
-            series5.Name = "Series1";
-            this.chart4.Series.Add(series5);
-            this.chart4.Size = new System.Drawing.Size(465, 297);
-            this.chart4.TabIndex = 16;
-            this.chart4.Text = "chart4";
-            title5.Name = "Диаграмма";
-            title5.Text = "График функций";
-            this.chart4.Titles.Add(title5);
-            // 
             // chart3
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            legend6.Title = "Цвета графиков";
-            legend6.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line;
-            this.chart3.Legends.Add(legend6);
-            this.chart3.Location = new System.Drawing.Point(487, 33);
+            chartArea10.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            legend10.Title = "Цвета графиков";
+            legend10.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line;
+            this.chart3.Legends.Add(legend10);
+            this.chart3.Location = new System.Drawing.Point(575, 33);
             this.chart3.Name = "chart3";
-            series6.BorderWidth = 3;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Color = System.Drawing.Color.Red;
-            series6.Legend = "Legend1";
-            series6.LegendText = "-";
-            series6.Name = "Series1";
-            this.chart3.Series.Add(series6);
-            this.chart3.Size = new System.Drawing.Size(465, 297);
+            series10.BorderWidth = 3;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series10.Color = System.Drawing.Color.Red;
+            series10.Legend = "Legend1";
+            series10.LegendText = "-";
+            series10.Name = "Series1";
+            this.chart3.Series.Add(series10);
+            this.chart3.Size = new System.Drawing.Size(551, 383);
             this.chart3.TabIndex = 15;
             this.chart3.Text = "chart3";
-            title6.Name = "Диаграмма";
-            title6.Text = "График функций";
-            this.chart3.Titles.Add(title6);
+            title10.Name = "Диаграмма";
+            title10.Text = "График функций";
+            this.chart3.Titles.Add(title10);
             // 
             // chart2
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            legend7.Title = "Цвета графиков";
-            legend7.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line;
-            this.chart2.Legends.Add(legend7);
-            this.chart2.Location = new System.Drawing.Point(7, 360);
+            chartArea11.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea11);
+            legend11.Name = "Legend1";
+            legend11.Title = "Цвета графиков";
+            legend11.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line;
+            this.chart2.Legends.Add(legend11);
+            this.chart2.Location = new System.Drawing.Point(293, 434);
             this.chart2.Name = "chart2";
-            series7.BorderWidth = 3;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.Color = System.Drawing.Color.Red;
-            series7.Legend = "Legend1";
-            series7.LegendText = "-";
-            series7.Name = "Series1";
-            this.chart2.Series.Add(series7);
-            this.chart2.Size = new System.Drawing.Size(465, 297);
+            series11.BorderWidth = 3;
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series11.Color = System.Drawing.Color.Red;
+            series11.Legend = "Legend1";
+            series11.LegendText = "-";
+            series11.Name = "Series1";
+            this.chart2.Series.Add(series11);
+            this.chart2.Size = new System.Drawing.Size(551, 341);
             this.chart2.TabIndex = 14;
             this.chart2.Text = "chart2";
-            title7.Name = "Диаграмма";
-            title7.Text = "График функций";
-            this.chart2.Titles.Add(title7);
+            title11.Name = "Диаграмма";
+            title11.Text = "График функций";
+            this.chart2.Titles.Add(title11);
             // 
             // chart1
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            legend8.Title = "Цвета графиков";
-            legend8.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line;
-            this.chart1.Legends.Add(legend8);
+            chartArea12.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea12);
+            legend12.Name = "Legend1";
+            legend12.Title = "Цвета графиков";
+            legend12.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line;
+            this.chart1.Legends.Add(legend12);
             this.chart1.Location = new System.Drawing.Point(7, 33);
             this.chart1.Name = "chart1";
-            series8.BorderWidth = 3;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.Color = System.Drawing.Color.Red;
-            series8.Legend = "Legend1";
-            series8.LegendText = "-";
-            series8.Name = "Series1";
-            this.chart1.Series.Add(series8);
-            this.chart1.Size = new System.Drawing.Size(465, 297);
+            series12.BorderWidth = 3;
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series12.Color = System.Drawing.Color.Red;
+            series12.Legend = "Legend1";
+            series12.LegendText = "-";
+            series12.Name = "Series1";
+            this.chart1.Series.Add(series12);
+            this.chart1.Size = new System.Drawing.Size(551, 383);
             this.chart1.TabIndex = 13;
             this.chart1.Text = "chart1";
-            title8.Name = "Диаграмма";
-            title8.Text = "График функций";
-            this.chart1.Titles.Add(title8);
+            title12.Name = "Диаграмма";
+            title12.Text = "График функций";
+            this.chart1.Titles.Add(title12);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.checkBox4);
-            this.groupBox4.Controls.Add(this.checkBox3);
-            this.groupBox4.Controls.Add(this.checkBox2);
-            this.groupBox4.Controls.Add(this.checkBox1);
+            this.groupBox4.Controls.Add(this.EzCheckBox);
+            this.groupBox4.Controls.Add(this.HyCheckBox);
+            this.groupBox4.Controls.Add(this.HxCheckBox);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(17, 560);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(679, 286);
+            this.groupBox4.Size = new System.Drawing.Size(261, 286);
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Выберите графики";
             // 
-            // checkBox4
+            // EzCheckBox
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(389, 158);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(134, 33);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "График4";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.EzCheckBox.AutoSize = true;
+            this.EzCheckBox.Location = new System.Drawing.Point(61, 195);
+            this.EzCheckBox.Name = "EzCheckBox";
+            this.EzCheckBox.Size = new System.Drawing.Size(140, 33);
+            this.EzCheckBox.TabIndex = 2;
+            this.EzCheckBox.Text = "График 3";
+            this.EzCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // HyCheckBox
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(389, 104);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(140, 33);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "График 3";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.HyCheckBox.AutoSize = true;
+            this.HyCheckBox.Location = new System.Drawing.Point(61, 137);
+            this.HyCheckBox.Name = "HyCheckBox";
+            this.HyCheckBox.Size = new System.Drawing.Size(140, 33);
+            this.HyCheckBox.TabIndex = 1;
+            this.HyCheckBox.Text = "График 2";
+            this.HyCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // HxCheckBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(124, 162);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(140, 33);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "График 2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(124, 104);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(140, 33);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "График 1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.HxCheckBox.AutoSize = true;
+            this.HxCheckBox.Location = new System.Drawing.Point(61, 79);
+            this.HxCheckBox.Name = "HxCheckBox";
+            this.HxCheckBox.Size = new System.Drawing.Size(140, 33);
+            this.HxCheckBox.TabIndex = 0;
+            this.HxCheckBox.Text = "График 1";
+            this.HxCheckBox.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -489,7 +445,6 @@ namespace WindowsFormsApp1
             this.loginPanel.ResumeLayout(false);
             this.loginPanel.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -520,11 +475,9 @@ namespace WindowsFormsApp1
         public System.Windows.Forms.TextBox SpatialGridStepTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
+        private System.Windows.Forms.CheckBox EzCheckBox;
+        private System.Windows.Forms.CheckBox HyCheckBox;
+        private System.Windows.Forms.CheckBox HxCheckBox;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Label label5;

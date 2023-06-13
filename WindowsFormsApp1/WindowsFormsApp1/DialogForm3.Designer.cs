@@ -92,7 +92,7 @@ namespace WindowsFormsApp1
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(165, 148);
+            this.groupBox1.Location = new System.Drawing.Point(165, 132);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(581, 306);
             this.groupBox1.TabIndex = 1;
@@ -227,7 +227,7 @@ namespace WindowsFormsApp1
             this.SaveObjectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveObjectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SaveObjectBtn.ForeColor = System.Drawing.Color.Black;
-            this.SaveObjectBtn.Location = new System.Drawing.Point(272, 551);
+            this.SaveObjectBtn.Location = new System.Drawing.Point(272, 470);
             this.SaveObjectBtn.Name = "SaveObjectBtn";
             this.SaveObjectBtn.Size = new System.Drawing.Size(175, 53);
             this.SaveObjectBtn.TabIndex = 32;
@@ -243,7 +243,7 @@ namespace WindowsFormsApp1
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CancelBtn.ForeColor = System.Drawing.Color.Black;
-            this.CancelBtn.Location = new System.Drawing.Point(453, 551);
+            this.CancelBtn.Location = new System.Drawing.Point(453, 470);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(175, 53);
             this.CancelBtn.TabIndex = 33;
@@ -256,7 +256,7 @@ namespace WindowsFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(919, 615);
+            this.ClientSize = new System.Drawing.Size(919, 548);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.SaveObjectBtn);
             this.Controls.Add(this.groupBox1);
