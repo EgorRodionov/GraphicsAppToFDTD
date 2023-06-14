@@ -229,90 +229,51 @@ namespace WindowsFormsApp1
                     }
                     //Console.WriteLine("\n ", T, ez[ic, jc]);
 
-                    //Вычисление поля Hx
-                    chart1.Series.Clear();
-                    Series series = new Series("Hx");
-                    chart1.Series.Add(series);
-                    series.ChartType = SeriesChartType.Line;
-
-                    for (j = 0; j < JE - 1; j++)
-                    {
-                        for (i = 0; i < IE; i++)
-                        {
-                            curl_e = ez[i, j] - ez[i, j + 1];
-                            ihx[i, j] = ihx[i, j] + fi1[i] * curl_e;
-                            hx[i, j] = fj3[j] * hx[i, j]
-                            + fj2[j] * .5f * (curl_e + ihx[i, j]);
-
-                            // Добавьте значение curl_e в серию данных графика
-                            series.Points.Add(curl_e);
-                            if (HxCheckBox.Checked == false)
-                                chart1.Series.Clear();
-                        }
-                    }
-                    chart2.Series.Clear();
-                    Series series2 = new Series("Hy");
-                    chart2.Series.Add(series2);
-                    series.ChartType = SeriesChartType.Line;
-                    // Вычисление поля Hy
-                    for (j = 0; j < JE - 1; j++)
-                    {
-                        for (i = 0; i < IE - 1; i++)
-                        {
-                            curl_e = ez[i + 1, j] - ez[i, j];
-                            ihy[i, j] = ihy[i, j] + fj1[j] * curl_e;
-                            hy[i, j] = fi3[i] * hy[i, j]
-                            + fi2[i] * .5f * (curl_e + ihy[i, j]);
-
-                            series2.Points.Add(curl_e);
-                            if (HyCheckBox.Checked == false)
-                                chart2.Series.Clear();
-                        }
-                    }
+                    
 
                     // Конец основного цикла FDTD
                 }
 
-                ////Вычисление поля Hx
-                //chart1.Series.Clear();
-                //Series series = new Series("Hx");
-                //chart1.Series.Add(series);
-                //series.ChartType = SeriesChartType.Line;
+                //Вычисление поля Hx
+                chart1.Series.Clear();
+                Series series = new Series("Hx");
+                chart1.Series.Add(series);
+                series.ChartType = SeriesChartType.Line;
 
-                //for (j = 0; j < JE - 1; j++)
-                //{
-                //    for (i = 0; i < IE; i++)
-                //    {
-                //        curl_e = ez[i, j] - ez[i, j + 1];
-                //        ihx[i, j] = ihx[i, j] + fi1[i] * curl_e;
-                //        hx[i, j] = fj3[j] * hx[i, j]
-                //        + fj2[j] * .5f * (curl_e + ihx[i, j]);
+                for (j = 0; j < JE - 1; j++)
+                {
+                    for (i = 0; i < IE; i++)
+                    {
+                        curl_e = ez[i, j] - ez[i, j + 1];
+                        ihx[i, j] = ihx[i, j] + fi1[i] * curl_e;
+                        hx[i, j] = fj3[j] * hx[i, j]
+                        + fj2[j] * .5f * (curl_e + ihx[i, j]);
 
-                //        // Добавьте значение curl_e в серию данных графика
-                //        series.Points.Add(curl_e);
-                //        if (HxCheckBox.Checked == false)
-                //            chart1.Series.Clear();
-                //    }
-                //}
-                //chart2.Series.Clear();
-                //Series series2 = new Series("Hy");
-                //chart2.Series.Add(series2);
-                //series.ChartType = SeriesChartType.Line;
-                //// Вычисление поля Hy
-                //for (j = 0; j < JE - 1; j++)
-                //{
-                //    for (i = 0; i < IE - 1; i++)
-                //    {
-                //        curl_e = ez[i + 1, j] - ez[i, j];
-                //        ihy[i, j] = ihy[i, j] + fj1[j] * curl_e;
-                //        hy[i, j] = fi3[i] * hy[i, j]
-                //        + fi2[i] * .5f * (curl_e + ihy[i, j]);
+                        // Добавьте значение curl_e в серию данных графика
+                        series.Points.Add(curl_e);
+                        if (HxCheckBox.Checked == false)
+                            chart1.Series.Clear();
+                    }
+                }
+                chart2.Series.Clear();
+                Series series2 = new Series("Hy");
+                chart2.Series.Add(series2);
+                series.ChartType = SeriesChartType.Line;
+                // Вычисление поля Hy
+                for (j = 0; j < JE - 1; j++)
+                {
+                    for (i = 0; i < IE - 1; i++)
+                    {
+                        curl_e = ez[i + 1, j] - ez[i, j];
+                        ihy[i, j] = ihy[i, j] + fj1[j] * curl_e;
+                        hy[i, j] = fi3[i] * hy[i, j]
+                        + fi2[i] * .5f * (curl_e + ihy[i, j]);
 
-                //        series2.Points.Add(curl_e);
-                //        if (HyCheckBox.Checked == false)
-                //            chart2.Series.Clear();
-                //    }
-                //}
+                        series2.Points.Add(curl_e);
+                        if (HyCheckBox.Checked == false)
+                            chart2.Series.Clear();
+                    }
+                }
 
                 chart3.Series.Clear();
                 Series series3 = new Series("Ez");
