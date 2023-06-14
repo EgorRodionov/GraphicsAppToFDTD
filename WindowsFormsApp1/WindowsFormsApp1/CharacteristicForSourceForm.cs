@@ -20,6 +20,8 @@ namespace WindowsFormsApp1
             _selectValue = selectValue;
         }
 
+        public static double Amplitude { get; private set; }
+        public static double Periodicity { get; private set; }
         public static double XCoordinate { get; private set; }
         public static double YCoordinate { get; private set; }
 
@@ -32,6 +34,8 @@ namespace WindowsFormsApp1
             double CoordinateX = double.Parse(CoordinateXtextBox.Text);
             double CoordinateY = double.Parse(CoordinateYtextBox.Text);
 
+            Amplitude = double.Parse(AmplitudeTextBox.Text);
+            Periodicity = double.Parse(PeriodicityTextBox.Text);
             XCoordinate = double.Parse(CoordinateXtextBox.Text);
             YCoordinate = double.Parse(CoordinateYtextBox.Text);
 

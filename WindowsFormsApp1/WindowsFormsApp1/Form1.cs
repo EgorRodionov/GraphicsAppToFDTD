@@ -44,6 +44,7 @@ namespace WindowsFormsApp1
             int IE = int.Parse(WidthtextBox.Text);
             int JE = int.Parse(HeightTextBox.Text);
             const int NFREQS = 3;
+            DialogForm2 dialogForm2 = Owner as DialogForm2;
 
             float[,] ga = new float[IE, JE];
             float[,] gb = new float[IE, JE];
@@ -52,8 +53,8 @@ namespace WindowsFormsApp1
             float[,] iz = new float[IE, JE];
             float[,] hx = new float[IE, JE];
             float[,] hy = new float[IE, JE];
-            int l, n, i, j, ic, jc, nsteps, npml, m, dist;
-            float ddx, dt, T, epsz, pi, epsilon, sigma, eaf;
+            int l, n, i, j, ic, jc, nsteps, npml, m;
+            float ddx, dt, T, epsz, pi;
             float xn, xxn, xnum, xd, curl_e;
             float t0, spread, pulse;
             float[] gi2 = new float[IE];
@@ -69,20 +70,17 @@ namespace WindowsFormsApp1
             float[,] ihx = new float[IE, JE];
             float[,] ihy = new float[IE, JE];
 
-            ic = IE / 2 - 10;
-            jc = JE / 2 - 10;
-            ddx = .01f; //Размер ячейки
+            ic = (int)CharacteristicForSourceForm.XCoordinate;
+            jc = (int)CharacteristicForSourceForm.YCoordinate;
+            ddx = float.Parse(SpatialGridStepTextBox.Text); //Размер ячейки
             dt = ddx / 6e8f; //шаг по времени
             epsz = 8.8e-12f;
             pi = 3.14159f;
-
 
             //Инициализируем массивы
 
             for (j = 0; j < JE; j++)
             {
-                Console.Write(j);
-                Console.Write(" ");
                 for (i = 0; i < IE; i++)
                 {
                     dz[i, j] = 0.0f;
@@ -91,9 +89,7 @@ namespace WindowsFormsApp1
                     ihx[i, j] = 0.0f;
                     ihy[i, j] = 0.0f;
                     ga[i, j] = 1.0f;
-                    Console.Write(ga[i, j]);
                 }
-                Console.WriteLine();
             }
             //Вычисление параметров PML
             for (i = 0; i < IE; i++)
@@ -113,7 +109,7 @@ namespace WindowsFormsApp1
                 fj3[j] = 1.0f;
             }
 
-            Console.Write("Number of PML cells --> ");
+            //Number of PML cells -->
             npml = int.Parse(NumberOfPmlLayersTextBox.Text);
             for (i = 0; i <= npml; i++)
             {
@@ -155,18 +151,16 @@ namespace WindowsFormsApp1
                 fj3[JE - 2 - j] = (1.0f - xn) / (1.0f + xn);
             }
 
-            DialogForm2 dialogForm2 = this.Owner as DialogForm2;
-
             Point pt;
 
             int x, y;
             int ia, ib, ja, jb;
 
-            ic = IE / 2;
-            jc = JE / 2;
-            ia = 7; /* Общие/рассеянные границы полей */
+            //ic = IE / 2;
+            //jc = JE / 2;
+            ia = npml + 2; /* Общие/рассеянные границы полей */
             ib = IE - ia - 1;
-            ja = 7;
+            ja = npml + 2;
             jb = JE - ja - 1;
 
             foreach (Figure fig in dialogForm2.Figures)
@@ -196,7 +190,6 @@ namespace WindowsFormsApp1
 
             while (nsteps > 0)
             {
-                Console.WriteLine("nsteps --> ");
                 nsteps = int.Parse(SpatialGridStepTextBox.Text);
                 for (n = 1; n <= nsteps; n++)
                 {
@@ -208,14 +201,13 @@ namespace WindowsFormsApp1
                         for (i = 1; i < IE; i++)
                         {
                             if ((i == (ic - 1)) && (j == (jc - 1)))
-                                Console.WriteLine();
                             dz[i, j] = gi3[i] * gj3[j] * dz[i, j]
                             + gi2[i] * gj2[j] * .5f * (hy[i, j] - hy[i - 1, j]
                             - hx[i, j] + hx[i, j - 1]);
                         }
                     }
                     //Синусоидальный источник
-                    pulse = (float)Math.Exp(-.5f * Math.Pow((T - t0) / spread, 2.0));
+                    pulse = (float)(CharacteristicForSourceForm.Amplitude * Math.Sin(2 * Math.PI * CharacteristicForSourceForm.Periodicity * T * dt));
                     dz[ic, jc] = pulse;
 
                     //Вычисление поля Ez
@@ -281,7 +273,6 @@ namespace WindowsFormsApp1
                 series3.ChartType = SeriesChartType.Line;
                 for (j = 1; j < JE; j++)
                 {
-                    Console.Write(j);
                     for (i = 1; i < IE; i++)
                     {
                         series3.Points.Add(ez[i, j]);
