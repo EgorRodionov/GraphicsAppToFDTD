@@ -36,3 +36,13 @@ C:\Users\Пользователь\Desktop\Диплом\Графическое п
 C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.IzmenenieGroupForm.resources
 C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.TaskForm.resources
 C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CreateTaskForm.resources
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SciChart.Charting.dll
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SciChart.Charting3D.dll
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SciChart.Core.dll
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SciChart.Data.dll
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SciChart.Drawing.dll
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SciChart.Charting.xml
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SciChart.Charting3D.xml
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SciChart.Core.xml
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SciChart.Data.xml
+C:\Users\Пользователь\Desktop\Диплом\Графическое приложение по методу FDTD\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\SciChart.Drawing.xml
